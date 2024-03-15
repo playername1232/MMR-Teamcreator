@@ -1,0 +1,71 @@
+Team číslo 1 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+mdot13	G1	mdot13
+last choice	G1	nefer77
+Fllo0oPs	G1	fllo0ops
+LOST IN KRALOVEC	G1	machec88
+50Shadesofban	G1	50Shadesofbann
+..........................................................................
+Team číslo 2 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+Xardasar	G1	Cokoladovytunik
+Lukasch2	G1	lukys____
+Mára Brzda	G1	vocasos
+I AM JONAS	G1	dzouunas
+Slothy Hannz	G1	HanzzCZ
+..........................................................................
+Team číslo 3 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+Zuziikk	G1	zuziinka1
+farm till I die	G1	zezak15
+WAS Korty	G1	korty12
+TTV MattOnTopp	G1	MattOnTop
+comake8	G1	kuririn8
+..........................................................................
+Team číslo 4 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+ßucháč	G1	suchac_
+ValdezLul	G1	valdez_lul
+Dead in 1sec	G1	Thomass616
+Zázrak z Moravy	G1	tzavadil
+Erunayo	G1	erunayolove
+..........................................................................
+Team číslo 5 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+Dawemandude	G1	Dawemandude
+Gedhry	G1	gedhry_cz
+OG Senpai	G1	OG_Senpai_Real
+ondikuvklubik	G1	NekroNEU
+mart3N	G1	Em_Vee
+..........................................................................
+Team číslo 6 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+Arxibalo	G1	inddyy
+Taaziik	G1	zz why ßlue
+Zagorka je bengr	G1	ondasak
+KrepoCZ	G1	threshplejr
+Warfy	G1	Warfy13
+..........................................................................
+Team číslo 7 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+JFK is now AFK	G1	Tomeiki
+reformed luko	G1	smutnej_gadzo
+T1 Betrayer	G1	Ezriana
+Karel55555	G1	karelkrawiecz
+ceskahymna	G1	fifo_10
+..........................................................................
+Team číslo 8 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+Atom 12	G1	cokoladovytunik
+Darthsully	G1	sullylol
+9INCHBENDINLEFT	G1	smoggy16
+Raivn	G1	raivn2
+LuckyMousie	G1	LuckyMousie
+..........................................................................
+Počet teamů: 8
+Počet hráčů: 40
+Průměrný mmr teamů: 16
+Průměrný rank teamů: Gold 1
+...............................Počet ranků................................
+Challenger: 0
+Grandmaster: 0
+Master: 0
+Diamond: 0
+Platinum: 0
+Gold: 40
+Silver: 0
+Bronze: 0
+Iron: 0
+...........................................................................

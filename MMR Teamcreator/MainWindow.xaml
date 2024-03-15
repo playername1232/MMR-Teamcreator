@@ -1,0 +1,24 @@
+﻿<Window x:Class="MMR_Teamcreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MMR_Teamcreator"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        Title="Team balancing" Height="200" Width="450">
+    <Grid x:Name="MainGrid_Grid" Margin="0,0,0,0">
+        <Button x:Name="Load_Button" Content="Load" HorizontalAlignment="Left" Height="20" Margin="48,104,0,0" VerticalAlignment="Top" Width="54" Click="Load_Button_Click"/>
+        <Button x:Name="BalanceTeams_Button" Content="Balance teams" Height="20" Margin="138,119,138,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="BalanceTeams_Button_Click"/>
+        <Label Content="Selected file" HorizontalAlignment="Left" Height="30" Margin="22,25,0,0" VerticalAlignment="Top" Width="119" FontSize="16" RenderTransformOrigin="0.504,-0.321"/>
+        <TextBlock x:Name="SelectedFile_TextBlock" HorizontalAlignment="Left" Margin="125,34,0,0" TextWrapping="Wrap" Text="No file selected" VerticalAlignment="Top" FontSize="12" Width="289" Background="#FFECECEC" MouseDown="SelectedFile_TextBlock_MouseDown" Height="16" LineStackingStrategy="MaxHeight"/>
+        <Label Content="Export file" HorizontalAlignment="Left" Height="30" Margin="22,57,0,0" VerticalAlignment="Top" Width="119" FontSize="16" RenderTransformOrigin="0.504,-0.321"/>
+        <TextBlock x:Name="ExportFile_TextBlock" HorizontalAlignment="Left" Margin="125,66,0,0" TextWrapping="Wrap" Text="No file selected" VerticalAlignment="Top" FontSize="12" Width="289" Background="#FFECECEC" MouseDown="ExportFile_TextBlock_MouseDown" Height="16" LineStackingStrategy="MaxHeight"/>
+        <Button x:Name="Upload_Button_Copy" Content="Export to Excel" HorizontalAlignment="Left" Height="20" Margin="328,129,0,0" VerticalAlignment="Top" Width="98" Click="Upload_Button_Click"/>
+        <Button x:Name="ImportFromExcel_Button" Content="Import from Excel" HorizontalAlignment="Left" Height="20" Margin="22,154,0,0" VerticalAlignment="Top" Width="106" Click="ImportFromExcel_Button_Click"/>
+        <Button x:Name="LoadLaneLess_Button" Content="Load Laneless" HorizontalAlignment="Left" Height="20" Margin="32,129,0,0" VerticalAlignment="Top" Width="86" Click="LoadLaneless_Button_Click"/>
+        <Button x:Name="BalanceLanelessTeams_Button" Content="Balance Laneless teams" Height="20" Margin="138,144,138,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="BalanceLanelessTeams_Button_Click"/>
+        <Label HorizontalAlignment="Left" Margin="377,174,0,0" VerticalAlignment="Top" Width="73"/>
+
+    </Grid>
+</Window>
