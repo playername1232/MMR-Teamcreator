@@ -10,26 +10,26 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
     class StreamersClashResult
     {
 
-        public List<StreamerClashPlayer> TopLaners { get; private set; }
-        public List<StreamerClashPlayer> Junglers { get; private set; }
-        public List<StreamerClashPlayer> Midlaners { get; private set; }
-        public List<StreamerClashPlayer> ADCarries { get; private set; }
-        public List<StreamerClashPlayer> Supports { get; private set; }
+        public List<StreamersClashPlayer> TopLaners { get; private set; }
+        public List<StreamersClashPlayer> Junglers { get; private set; }
+        public List<StreamersClashPlayer> Midlaners { get; private set; }
+        public List<StreamersClashPlayer> ADCarries { get; private set; }
+        public List<StreamersClashPlayer> Supports { get; private set; }
 
         public StreamersClashResult()
         {
-            TopLaners = new List<StreamerClashPlayer>();
-            Junglers = new List<StreamerClashPlayer>();
-            Midlaners = new List<StreamerClashPlayer>();
-            ADCarries = new List<StreamerClashPlayer>();
-            Supports = new List<StreamerClashPlayer>();
+            TopLaners = new List<StreamersClashPlayer>();
+            Junglers = new List<StreamersClashPlayer>();
+            Midlaners = new List<StreamersClashPlayer>();
+            ADCarries = new List<StreamersClashPlayer>();
+            Supports = new List<StreamersClashPlayer>();
         }
 
-        public StreamersClashResult(List<StreamerClashPlayer> topLaners, 
-                                    List<StreamerClashPlayer> junglers, 
-                                    List<StreamerClashPlayer> midlaners, 
-                                    List<StreamerClashPlayer> aDCarries, 
-                                    List<StreamerClashPlayer> supports,
+        public StreamersClashResult(List<StreamersClashPlayer> topLaners, 
+                                    List<StreamersClashPlayer> junglers, 
+                                    List<StreamersClashPlayer> midlaners, 
+                                    List<StreamersClashPlayer> aDCarries, 
+                                    List<StreamersClashPlayer> supports,
                                     bool sortPlayers = true)
         {
             TopLaners = topLaners;
@@ -55,7 +55,7 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
 
         void AssignBudgetToCaptains()
         {
-            List<List<StreamerClashPlayer>> playerLists = new List<List<StreamerClashPlayer>>()
+            List<List<StreamersClashPlayer>> playerLists = new List<List<StreamersClashPlayer>>()
             {
                 TopLaners,
                 Junglers,
@@ -141,7 +141,7 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
 
         public string[] GetCaptainOutput()
         {
-            List<StreamerClashPlayer> captains = GetCaptains();
+            List<StreamersClashPlayer> captains = GetCaptains();
             string[] res = new string[captains.Count];
 
             for (int i = 0; i < captains.Count; i++)
@@ -154,7 +154,7 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
 
         public string[] GetOutput()
         {
-            List<StreamerClashPlayer> players = GetPlayersExceptCaptains();
+            List<StreamersClashPlayer> players = GetPlayersExceptCaptains();
 
             // Count of players + 5 outputs for lines
             int arrLen = players.Count + 5,
@@ -167,7 +167,7 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
 
             for(int i = 0; i < players.Count; i++, outIdx++)
             {
-                StreamerClashPlayer player = players[i];
+                StreamersClashPlayer player = players[i];
 
                 if (player.Role != lastRole)
                 {
@@ -181,9 +181,9 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
             return res;
         }
 
-        public List<StreamerClashPlayer> GetPlayersExceptCaptains()
+        public List<StreamersClashPlayer> GetPlayersExceptCaptains()
         {
-            List<StreamerClashPlayer> res = new List<StreamerClashPlayer>();
+            List<StreamersClashPlayer> res = new List<StreamersClashPlayer>();
 
             res.AddRange(TopLaners.Where(x => !x.IsCaptain));
             res.AddRange(Junglers.Where(x => !x.IsCaptain));
@@ -207,9 +207,9 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
             return res;
         }
 
-        public List<StreamerClashPlayer> GetCaptains()
+        public List<StreamersClashPlayer> GetCaptains()
         {
-            List<StreamerClashPlayer> res = new List<StreamerClashPlayer>();
+            List<StreamersClashPlayer> res = new List<StreamersClashPlayer>();
 
             res.AddRange(TopLaners.Where(x => x.IsCaptain));
             res.AddRange(Junglers.Where(x => x.IsCaptain));
