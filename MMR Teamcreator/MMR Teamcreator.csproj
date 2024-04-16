@@ -152,7 +152,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Streamers Clash\StreamerClashPlayer.cs" />
+    <Compile Include="Model\Streamers Clash\StreamersClashPlayer.cs" />
     <Compile Include="Model\Streamers Clash\StreamersClashResult.cs" />
     <Compile Include="Model\TeamBalancing\TeamLanelessMethods.cs" />
     <Compile Include="Model\DirectoryMethods.cs" />

@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MMR Teamcreator/.vs/MMR Teamcreator.csproj.dtbcache.json
+/MMR Teamcreator/bin/Debug/RFPExcelAPI
+/MMR Teamcreator/bin/Debug
+/MMR Teamcreator/obj/Debug
+/packages/ClosedXML.0.95.4
+/packages/BouncyCastle.1.8.9
+/packages
