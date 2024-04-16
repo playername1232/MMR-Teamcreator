@@ -136,7 +136,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="enumClass.cs" />
+    <Compile Include="Model\enumClass.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -152,13 +152,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\TeamLanelessMethods.cs" />
+    <Compile Include="Model\Streamers Clash\StreamerClashPlayer.cs" />
+    <Compile Include="Model\Streamers Clash\StreamersClashResult.cs" />
+    <Compile Include="Model\TeamBalancing\TeamLanelessMethods.cs" />
     <Compile Include="Model\DirectoryMethods.cs" />
-    <Compile Include="Model\TeamMethods.cs" />
-    <Compile Include="Model\Player.cs" />
-    <Compile Include="Model\PlayerLaneless.cs" />
-    <Compile Include="Model\Team.cs" />
-    <Compile Include="Model\TeamLaneless.cs" />
+    <Compile Include="Model\TeamBalancing\TeamMethods.cs" />
+    <Compile Include="Model\TeamBalancing\Player.cs" />
+    <Compile Include="Model\TeamBalancing\PlayerLaneless.cs" />
+    <Compile Include="Model\TeamBalancing\Team.cs" />
+    <Compile Include="Model\TeamBalancing\TeamLaneless.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

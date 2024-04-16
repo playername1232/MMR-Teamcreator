@@ -11,9 +11,17 @@ using System.Runtime.InteropServices;
 using System.Linq;
 using System.Windows.Media.TextFormatting;
 using DocumentFormat.OpenXml.Drawing.Diagrams;
+using MMR_Teamcreator.Model.Streamers_Clash;
+using System.Text;
 
 namespace MMR_Teamcreator
 {
+    enum ProgramModes : int
+    {
+        TeamBalancing = 0,
+        StreamersClash = 1
+    };
+
     public partial class MainWindow : Window
     {
         string ImportFilePath = string.Empty, ExportFilePath = string.Empty;
@@ -30,13 +38,22 @@ namespace MMR_Teamcreator
         List<Player> supportList;
         List<PlayerLaneless> lanelessList;
 
+        StreamersClashResult StreamerResult;
+
+        ProgramModes currentMode = ProgramModes.TeamBalancing;
+
         public MainWindow()
         {
             InitializeComponent();
             ResizeMode = ResizeMode.NoResize;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
-            
+            TeamBalancing_Canvas.Visibility = Visibility.Visible;
+            StreamersClash_Canvas.Visibility = Visibility.Hidden;
+
+            currentMode = ProgramModes.TeamBalancing;
+            SwitchMode_Button.Content = "Switch to StreamersClash";
+
             #region ListStuff
             topList = new List<Player>();
             jungleList= new List<Player>();
@@ -45,12 +62,13 @@ namespace MMR_Teamcreator
             supportList= new List<Player>();
             lanelessList = new List<PlayerLaneless>();
 
-            //TODO load players into lists
-
+            StreamerResult = new StreamersClashResult();
             #endregion
         }
 
-        // This Method is deprecated
+        /// <summary>
+        /// This Method is deprecated
+        /// </summary>
         [Obsolete("This method is not being used due to different approach", true)]
         private void PlayerSelection()
         {
@@ -116,6 +134,49 @@ namespace MMR_Teamcreator
             MessageBox.Show(((TextBox)sender).Name);
         }
 
+        private void SwitchMode_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ImportFilePath = SelectedFile_TextBlock.Text = "No file selected";
+            ExportFilePath = ExportFile_TextBlock.Text = "No file selected";
+
+            // Clean lists
+            topList.Clear();
+            jungleList.Clear();
+            midList.Clear();
+            adcList.Clear();
+            supportList.Clear();
+            lanelessList.Clear();
+
+            StreamerResult.TopLaners.Clear();
+            StreamerResult.Junglers.Clear();
+            StreamerResult.Midlaners.Clear();
+            StreamerResult.ADCarries.Clear();
+            StreamerResult.Supports.Clear();
+
+
+
+            if (currentMode == ProgramModes.TeamBalancing)
+            {
+                // Switch to Streamers Clash
+
+                StreamersClash_Canvas.Visibility = Visibility.Visible;
+                TeamBalancing_Canvas.Visibility = Visibility.Hidden;
+
+                currentMode = ProgramModes.StreamersClash;
+                SwitchMode_Button.Content = "Switch to Team Balancing";
+            }
+            else if (currentMode == ProgramModes.StreamersClash)
+            {
+                // Switch to Team Balancing
+                StreamersClash_Canvas.Visibility = Visibility.Hidden;
+                TeamBalancing_Canvas.Visibility = Visibility.Visible;
+
+                currentMode = ProgramModes.TeamBalancing;
+                SwitchMode_Button.Content = "Switch to StreamersClash";
+            }
+        }
+
+        #region TeamBalancing_region
         private void BalanceTeams_Button_Click(object sender, RoutedEventArgs e)
         {
             if (_bLaneless)
@@ -398,5 +459,127 @@ namespace MMR_Teamcreator
             //TODO
             //run Python script
         }
+
+        #endregion
+
+        #region StreamersClash
+        private void LoadStreamersClash_Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<StreamersClashPlayer>  streamerTopList     = new List<StreamersClashPlayer>();
+            List<StreamersClashPlayer>  streamerJungleList  = new List<StreamersClashPlayer>();
+            List<StreamersClashPlayer>  streamerMidList     = new List<StreamersClashPlayer>();
+            List<StreamersClashPlayer>  streamerADCList     = new List<StreamersClashPlayer>();
+            List<StreamersClashPlayer>  streamerSupportList = new List<StreamersClashPlayer>();
+
+            if (!Directory.Exists($@"{Environment.CurrentDirectory}\StreamersClash"))
+                Directory.CreateDirectory($@"{Environment.CurrentDirectory}\StreamersClash");
+
+            string playersPath = ImportFilePath = $@"{Environment.CurrentDirectory}\StreamersClash\players.txt";
+            string captainsPath = $@"{Environment.CurrentDirectory}\StreamersClash\captains.txt";
+
+            SelectedFile_TextBlock.Text = (playersPath.Length >= 38) ? $"{HelpMetods.StringRange(playersPath, new int[2] { 0, 42 })}" : playersPath;
+
+            if (ImportFilePath == String.Empty)
+            {
+                MessageBox.Show("No file was imported", "NO FILE FOUND", MessageBoxButton.OK);
+                return;
+            }
+
+            string[] content = File.ReadAllLines(playersPath);
+            string[] captainContent = File.ReadAllLines(captainsPath);
+
+            for(int i = 0; i < content.Length; i++)
+            {
+                // Twitch_Nick:RANK:INGAME_NICK:ROLE
+                string[] split = content[i].Split(':');
+
+                StreamersClashPlayer current = new StreamersClashPlayer(role: split[3], twitch: split[0], rank: split[1], ingame: split[2], isCaptain: false);
+
+                switch(current.Role)
+                {
+                    case Roles.Top:
+                        {
+                            streamerTopList.Add(current);
+                            break;
+                        }
+                    case Roles.Jungle:
+                        {
+                            streamerJungleList.Add(current);
+                            break;
+                        }
+                    case Roles.Mid:
+                        {
+                            streamerMidList.Add(current);
+                            break;
+                        }
+                    case Roles.ADC:
+                        {
+                            streamerADCList.Add(current);
+                            break;
+                        }
+                    case Roles.Support:
+                        {
+                            streamerSupportList.Add(current);
+                            break;
+                        }
+                }
+            }
+
+            for (int i = 0; i < captainContent.Length; i++)
+            {
+                // Twitch_Nick:RANK:INGAME_NICK:ROLE
+                string[] split = captainContent[i].Split(':');
+
+                StreamersClashPlayer current = new StreamersClashPlayer(role: split[3], twitch: split[0], rank: split[1], ingame: split[2], isCaptain: true);
+
+                switch (current.Role)
+                {
+                    case Roles.Top:
+                        {
+                            streamerTopList.Add(current);
+                            break;
+                        }
+                    case Roles.Jungle:
+                        {
+                            streamerJungleList.Add(current);
+                            break;
+                        }
+                    case Roles.Mid:
+                        {
+                            streamerMidList.Add(current);
+                            break;
+                        }
+                    case Roles.ADC:
+                        {
+                            streamerADCList.Add(current);
+                            break;
+                        }
+                    case Roles.Support:
+                        {
+                            streamerSupportList.Add(current);
+                            break;
+                        }
+                }
+            }
+
+            StreamerResult = new StreamersClashResult(streamerTopList, streamerJungleList, streamerMidList, streamerADCList, streamerSupportList);
+        }
+
+        private void GenerateStreamersClashFiles_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Directory.Exists($@"{Environment.CurrentDirectory}\StreamersClash"))
+                Directory.CreateDirectory($@"{Environment.CurrentDirectory}\StreamersClash");
+            string playersPath = ImportFilePath = $@"{Environment.CurrentDirectory}\StreamersClash\Outplayers.txt";
+            string captainsPath = $@"{Environment.CurrentDirectory}\StreamersClash\Outcaptains.txt";
+
+            string[] playersOut = StreamerResult.GetOutput();
+            string[] captainsOut = StreamerResult.GetCaptainOutput();
+
+            File.WriteAllLines(playersPath, playersOut, encoding: Encoding.UTF8);
+            File.WriteAllLines(captainsPath, captainsOut, encoding: Encoding.UTF8);
+
+            MessageBox.Show("Výsledky zapsány!");
+        }
+        #endregion
     }
 }

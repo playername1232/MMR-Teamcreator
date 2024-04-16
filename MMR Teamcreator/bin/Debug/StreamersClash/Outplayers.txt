@@ -1,0 +1,85 @@
+﻿Top avg points = 15
+Pischinger	D2	pischingr	Top	23
+wandrbandr	P4	wandrbandrr	Top	17
+Barrel Slayer	P4	Bisifen	Top	17
+fenion	P4	fenion	Top	17
+LosAdos	P4	LosAdos	Top	17
+Vojtas	P4	vojtasczxd	Top	17
+Říkej mi Kar	P4	staw001	Top	17
+Votta01	P4	votta01	Top	17
+PLOKIJ	G2	PL0KIJ	Top	15
+Honziss1	G2	Naffys1	Top	15
+Mum4mCZ	G4	MikiCat4	Top	13
+Fitness Man	S1	miprakojad	Top	12
+Shovel me senpai	S1	akiryuu69	Top	12
+Lord KurQa	S1	LordKurqa	Top	12
+prosCZE52	S2	proscz	Top	11
+SteveTheMlgDog	S2	panstevecake	Top	11
+Jungle avg points = 16
+Dvorson	D2	Dvorson	Jungle	23
+Matolla	P2	Matolla277	Jungle	19
+Raya Sin	P3	ufodavid	Jungle	18
+jirka671	P3	jirka671	Jungle	18
+LastWhisper4U 	P3	norty1441	Jungle	18
+where is my buff	P4	BadPrince148	Jungle	17
+xxlolpopxxx 	P4	lolpop20	Jungle	17
+karel55555 	G1	karelkrawiecz	Jungle	16
+DzuzepTheLegenda	G3	DzuzepTheLegenda	Jungle	14
+SokiiCZ 	G3	tom02030	Jungle	14
+Steals	G4	lesnepan	Jungle	13
+JustWenca	G4	justwenca	Jungle	13
+DocfoxxSK	G4	Sakyron	Jungle	13
+Forejtos	G4	forejtos_	Jungle	13
+kup kilo chleba	G4	DarwenVOLE	Jungle	13
+L4ch11m	S4	monke_uugway	Jungle	9
+Mid avg points = 18
+Natievelog	MA	natievelogg	Mid	25
+meiwe	D2	uniqu3__	Mid	23
+Keram1	D3	majkygg	Mid	22
+vilik159	D4	Ferenc5	Mid	21
+Danielson13	D4	skskyrim	Mid	21
+JustLeo	D4	JustLeo77	Mid	21
+LL StylishShadow	P3	llshadowtempest	Mid	18
+Petross01	P4	Petross	Mid	17
+Slothy Hannz	P4	HannzCZ	Mid	17
+Bacha flákanec	P4	just_fere	Mid	17
+Tums Du Couteau	P4	ShadowTums	Mid	17
+pentakill826	P4	pentakill826	Mid	17
+Ρref Midlane	G3	minecraftcreeper548	Mid	14
+Plameňák	G4	FlameGoCZ	Mid	13
+zubys	S3	zubys	Mid	10
+AceeEUNE	S4	spatny_lolkar	Mid	9
+ADC avg points = 16
+TheKoblížek	D2	PanKobliha	ADC	23
+FaneMaBan 	D4	makishimue	ADC	21
+Yasuo Okamura	P2	Vantscher	ADC	19
+Feeddis 	P3	radis16	ADC	18
+Temnitata 	P3	temnitata	ADC	18
+AmigoMarek 	P3	AmigoMarek	ADC	18
+Gastm3n 	P3	jozkatykokot	ADC	18
+matkx	P3	ryzejedobra	ADC	18
+Pîxel HD	P3	FooXy21	ADC	18
+ZACHODnevedem	G1	rampelnikcz	ADC	16
+jeliman5	G2	Jeliman5	ADC	15
+Just Carrot	G2	radekjahoda	ADC	15
+edusnik killer	G3	PogGragasIRL	ADC	14
+Malej Pumpař	G3	nefer77	ADC	14
+whothefckisdoyl 	G4	doyleek	ADC	13
+onman00 	S3	onmancz	ADC	10
+Support avg points = 13
+tyranitar60	P3	tyranitar60	Support	18
+Nagyn	P4	Nagyn	Support	17
+ofun01	G2	ofun01	Support	15
+AfricanPizzaBoy 	G2	africanrichboy	Support	15
+Eldaroncz	G2	xxXenyXxx	Support	15
+LetMeFlameYou	G3	shironagate	Support	14
+Dawemandude	G3	Dawemandude	Support	14
+Gwerano	G4	Gwerano	Support	13
+KUBULIN22 	G4	Kubulin221	Support	13
+Avezirel 	S1	VratikCZE	Support	12
+Morten240cz 	S1	chybacz	Support	12
+caujsempaja	S2	caujsempaja	Support	11
+pippís 	S2	pippis90	Support	11
+joseeeef	S3	mezigalaktickejosel	Support	10
+tonino5 	S3	troubavodvedle	Support	10
+mart3N 	S4	EmVee1	Support	9

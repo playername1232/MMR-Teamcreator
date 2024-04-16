@@ -6,19 +6,29 @@
         xmlns:local="clr-namespace:MMR_Teamcreator"
         mc:Ignorable="d"
         SizeToContent="WidthAndHeight"
-        Title="Team balancing" Height="200" Width="450">
+        Title="Team balancing" Height="200" Width="482">
     <Grid x:Name="MainGrid_Grid" Margin="0,0,0,0">
-        <Button x:Name="Load_Button" Content="Load" HorizontalAlignment="Left" Height="20" Margin="48,104,0,0" VerticalAlignment="Top" Width="54" Click="Load_Button_Click"/>
-        <Button x:Name="BalanceTeams_Button" Content="Balance teams" Height="20" Margin="138,119,138,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="BalanceTeams_Button_Click"/>
         <Label Content="Selected file" HorizontalAlignment="Left" Height="30" Margin="22,25,0,0" VerticalAlignment="Top" Width="119" FontSize="16" RenderTransformOrigin="0.504,-0.321"/>
         <TextBlock x:Name="SelectedFile_TextBlock" HorizontalAlignment="Left" Margin="125,34,0,0" TextWrapping="Wrap" Text="No file selected" VerticalAlignment="Top" FontSize="12" Width="289" Background="#FFECECEC" MouseDown="SelectedFile_TextBlock_MouseDown" Height="16" LineStackingStrategy="MaxHeight"/>
         <Label Content="Export file" HorizontalAlignment="Left" Height="30" Margin="22,57,0,0" VerticalAlignment="Top" Width="119" FontSize="16" RenderTransformOrigin="0.504,-0.321"/>
         <TextBlock x:Name="ExportFile_TextBlock" HorizontalAlignment="Left" Margin="125,66,0,0" TextWrapping="Wrap" Text="No file selected" VerticalAlignment="Top" FontSize="12" Width="289" Background="#FFECECEC" MouseDown="ExportFile_TextBlock_MouseDown" Height="16" LineStackingStrategy="MaxHeight"/>
-        <Button x:Name="Upload_Button_Copy" Content="Export to Excel" HorizontalAlignment="Left" Height="20" Margin="328,129,0,0" VerticalAlignment="Top" Width="98" Click="Upload_Button_Click"/>
-        <Button x:Name="ImportFromExcel_Button" Content="Import from Excel" HorizontalAlignment="Left" Height="20" Margin="22,154,0,0" VerticalAlignment="Top" Width="106" Click="ImportFromExcel_Button_Click"/>
-        <Button x:Name="LoadLaneLess_Button" Content="Load Laneless" HorizontalAlignment="Left" Height="20" Margin="32,129,0,0" VerticalAlignment="Top" Width="86" Click="LoadLaneless_Button_Click"/>
-        <Button x:Name="BalanceLanelessTeams_Button" Content="Balance Laneless teams" Height="20" Margin="138,144,138,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="BalanceLanelessTeams_Button_Click"/>
-        <Label HorizontalAlignment="Left" Margin="377,174,0,0" VerticalAlignment="Top" Width="73"/>
+        <Button Margin="305,118,18,46" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="SwitchMode_Button" Height="20" Width="150" Content="SWITCH__BUTTON" Click="SwitchMode_Button_Click"></Button>
 
+        <Canvas x:Name="TeamBalancing_Canvas" Visibility="Hidden">
+            <Button x:Name="Load_Button" Content="Load" HorizontalAlignment="Left" Height="20" Margin="48,104,0,0" VerticalAlignment="Top" Width="54" Click="Load_Button_Click"/>
+            <Button x:Name="BalanceTeams_Button" Content="Balance teams" Height="20" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Click="BalanceTeams_Button_Click" Canvas.Left="162" Canvas.Top="119" Width="126" HorizontalAlignment="Left"/>
+            <Button x:Name="Upload_Button_Copy" Content="Export to Excel" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="98" Click="Upload_Button_Click" Canvas.Left="330" Canvas.Top="144"/>
+            <Button x:Name="ImportFromExcel_Button" Content="Import from Excel" HorizontalAlignment="Left" Height="20" Margin="22,154,0,0" VerticalAlignment="Top" Width="106" Click="ImportFromExcel_Button_Click"/>
+            <Button x:Name="LoadLaneLess_Button" Content="Load Laneless" HorizontalAlignment="Left" Height="20" Margin="32,129,0,0" VerticalAlignment="Top" Width="86" Click="LoadLaneless_Button_Click"/>
+            <Button x:Name="BalanceLanelessTeams_Button" Content="Balance Laneless teams" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="BalanceLanelessTeams_Button_Click" Canvas.Left="161" Canvas.Top="144"/>
+            <Label HorizontalAlignment="Left" Margin="377,174,0,0" VerticalAlignment="Top" Width="73"/>
+        </Canvas>
+        <Canvas x:Name="StreamersClash_Canvas" Visibility="Visible">
+            <Button x:Name="LoadStreamersClash_Button" Content="Load Streamers Clash Players" 
+                    HorizontalAlignment="Center" Height="20" VerticalAlignment="Top" Width="193" Canvas.Left="10" Canvas.Top="118" Click="LoadStreamersClash_Button_Click"/>
+
+            <Button x:Name="GenerateStreamersClashFiles_Button" Content="Process Streamers Clash Players" Height="20" 
+                    VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Canvas.Left="10" Canvas.Top="143" Width="193" HorizontalAlignment="Left" Click="GenerateStreamersClashFiles_Button_Click"/>
+        </Canvas>
     </Grid>
 </Window>
