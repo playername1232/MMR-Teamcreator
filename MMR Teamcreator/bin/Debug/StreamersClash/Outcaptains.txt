@@ -1,4 +1,4 @@
-﻿Herdyn	P1	Herdyn	Top	58
-Gornagal	CH	Gorni	Jungle	51
-Xnapy	MA	XnapyCZ	Mid	53
-Ovdovovac	MA	Ovdovovac	Mid	53
+﻿Herdyn	P1	Herdyn	Top	86
+Gornagal	CH	Gorni	Jungle	75
+Xnapy	MA	XnapyCZ	Mid	77
+Ovdovovac	MA	Ovdovovac	Mid	77

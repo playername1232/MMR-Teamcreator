@@ -71,6 +71,7 @@ namespace MMR_Teamcreator.Model
                 Divisions.Silver_4, Divisions.Silver_3, Divisions.Silver_2, Divisions.Silver_1,
                 Divisions.Gold_4, Divisions.Gold_3, Divisions.Gold_2, Divisions.Gold_1,
                 Divisions.Platinum_4, Divisions.Platinum_3, Divisions.Platinum_2, Divisions.Platinum_1,
+                Divisions.Emerald_4, Divisions.Emerald_3, Divisions.Emerald_2, Divisions.Emerald_1,
                 Divisions.Diamond_4, Divisions.Diamond_3, Divisions.Diamond_2, Divisions.Diamond_1,
                 Divisions.Master_A, Divisions.Grandmaster_M, Divisions.Challenger_H
             };

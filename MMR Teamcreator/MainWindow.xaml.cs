@@ -486,51 +486,47 @@ namespace MMR_Teamcreator
             }
 
             string[] content = File.ReadAllLines(playersPath);
-            string[] captainContent = File.ReadAllLines(captainsPath);
 
             for(int i = 0; i < content.Length; i++)
             {
-                // Twitch_Nick:RANK:INGAME_NICK:ROLE
-                string[] split = content[i].Split(':');
+                // Twitch_Nick:INGAME_NICK:ROLE:SECONDARY_ROLE:RANK
+                string[] split = content[i].Split(';');
 
-                StreamersClashPlayer current = new StreamersClashPlayer(role: split[3], twitch: split[0], rank: split[1], ingame: split[2], isCaptain: false);
+                StreamersClashPlayer current = new StreamersClashPlayer(role: split[2], secondaryRole: split[3], 
+                    twitch: split[0], rank: split[4], ingame: split[1], isCaptain: false);
 
-                switch(current.Role)
+                Tuple<Roles, Roles> rolesTuple = new Tuple<Roles, Roles>(current.Role, current.SecondaryRole);
+
+                if(rolesTuple.Item1 == Roles.Top || rolesTuple.Item2 == Roles.Top)
                 {
-                    case Roles.Top:
-                        {
-                            streamerTopList.Add(current);
-                            break;
-                        }
-                    case Roles.Jungle:
-                        {
-                            streamerJungleList.Add(current);
-                            break;
-                        }
-                    case Roles.Mid:
-                        {
-                            streamerMidList.Add(current);
-                            break;
-                        }
-                    case Roles.ADC:
-                        {
-                            streamerADCList.Add(current);
-                            break;
-                        }
-                    case Roles.Support:
-                        {
-                            streamerSupportList.Add(current);
-                            break;
-                        }
+                    streamerTopList.Add(current);
+                }
+                if(rolesTuple.Item1 == Roles.Jungle || rolesTuple.Item2 == Roles.Jungle)
+                {
+                    streamerJungleList.Add(current);
+                }
+                if (rolesTuple.Item1 == Roles.Mid || rolesTuple.Item2 == Roles.Mid)
+                {
+                    streamerMidList.Add(current);
+                }
+                if (rolesTuple.Item1 == Roles.ADC || rolesTuple.Item2 == Roles.ADC)
+                {
+                    streamerADCList.Add(current);
+                }
+                if (rolesTuple.Item1 == Roles.Support || rolesTuple.Item2 == Roles.Support)
+                {
+                    streamerSupportList.Add(current);
                 }
             }
 
+            string[] captainContent = File.ReadAllLines(captainsPath);
+
             for (int i = 0; i < captainContent.Length; i++)
             {
-                // Twitch_Nick:RANK:INGAME_NICK:ROLE
+                // Twitch_Nick:INGAME_NICK:ROLE:RANK
                 string[] split = captainContent[i].Split(':');
 
-                StreamersClashPlayer current = new StreamersClashPlayer(role: split[3], twitch: split[0], rank: split[1], ingame: split[2], isCaptain: true);
+                StreamersClashPlayer current = new StreamersClashPlayer(role: split[2], twitch: split[0], rank: split[3], ingame: split[1], isCaptain: true);
 
                 switch (current.Role)
                 {

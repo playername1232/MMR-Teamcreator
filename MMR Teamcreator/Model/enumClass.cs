@@ -21,13 +21,17 @@
     Platinum_3 = 18,
     Platinum_2 = 19,
     Platinum_1 = 20,
-    Diamond_4 = 21,
-    Diamond_3 = 22,
-    Diamond_2 = 23,
-    Diamond_1 = 24,
-    Master_A = 25,
-    Grandmaster_M = 26,
-    Challenger_H = 27
+    Emerald_4 = 21,
+    Emerald_3 = 22,
+    Emerald_2 = 23,
+    Emerald_1 = 24,
+    Diamond_4 = 25,
+    Diamond_3 = 26,
+    Diamond_2 = 27,
+    Diamond_1 = 28,
+    Master_A = 29,
+    Grandmaster_M = 30,
+    Challenger_H = 31
 }
 public enum Roles
 {
@@ -35,5 +39,6 @@ public enum Roles
     Jungle = 1,
     Mid = 2,
     ADC = 3, 
-    Support = 4
+    Support = 4,
+    None = 5
 }

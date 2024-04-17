@@ -1,9 +1,12 @@
-﻿using Org.BouncyCastle.Bcpg.OpenPgp;
+﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace MMR_Teamcreator.Model.Streamers_Clash
 {
@@ -74,6 +77,8 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
                     + GetAverageRankOfRole(Roles.ADC) 
                     + GetAverageRankOfRole(Roles.Support);
 
+                    int xd = y.GetMMR();
+
                     y.ChangeCaptainBudget(budget - y.GetMMR());
                 }
             }));
@@ -102,36 +107,72 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
         {
             int avg = 0;
 
-            switch(role)
+            // TODO: Shorten the code
+            switch (role)
             {
                 case Roles.Top:
                     {
-                        TopLaners.ForEach(x => avg += x.GetMMR());
-                        avg /= TopLaners.Count;
+                        List<StreamersClashPlayer> pom = GetPlayersExceptCaptains(Roles.Top);
+                        pom.ForEach(x =>
+                        {
+                            if (x.Role == role && !x.IsCaptain)
+                                avg += x.GetMMR();
+                            else if (x.SecondaryRole == role && !x.IsCaptain)
+                                avg += x.GetSecondaryMMR();
+                        });
+                        avg = (int)Math.Round((double)avg / pom.Count);
                         break;
                     }
                 case Roles.Jungle:
                     {
-                        Junglers.ForEach(x => avg += x.GetMMR());
-                        avg /= Junglers.Count;
+                        List<StreamersClashPlayer> pom = GetPlayersExceptCaptains(Roles.Jungle);
+                        pom.ForEach(x =>
+                        {
+                            if (x.Role == role && !x.IsCaptain)
+                                avg += x.GetMMR();
+                            else if (x.SecondaryRole == role && !x.IsCaptain)
+                                avg += x.GetSecondaryMMR();
+                        });
+                        avg = (int)Math.Round((double)avg / pom.Count);
                         break;
                     }
                 case Roles.Mid:
                     {
-                        Midlaners.ForEach(x => avg += x.GetMMR());
-                        avg /= Midlaners.Count;
+                        List<StreamersClashPlayer> pom = GetPlayersExceptCaptains(Roles.Mid);
+                        pom.ForEach(x =>
+                        {
+                            if (x.Role == role && !x.IsCaptain)
+                                avg += x.GetMMR();
+                            else if (x.SecondaryRole == role && !x.IsCaptain)
+                                avg += x.GetSecondaryMMR();
+                        });
+                        avg = (int)Math.Round((double)avg / pom.Count);
                         break;
                     }
                 case Roles.ADC:
                     {
-                        ADCarries.ForEach(x => avg += x.GetMMR());
-                        avg /= ADCarries.Count;
+                        List<StreamersClashPlayer> pom = GetPlayersExceptCaptains(Roles.ADC);
+                        pom.ForEach(x =>
+                        {
+                            if (x.Role == role && !x.IsCaptain)
+                                avg += x.GetMMR();
+                            else if (x.SecondaryRole == role && !x.IsCaptain)
+                                avg += x.GetSecondaryMMR();
+                        });
+                        avg = (int)Math.Round((double)avg / pom.Count);
                         break;
                     }
                 case Roles.Support:
                     {
-                        Supports.ForEach(x => avg += x.GetMMR());
-                        avg /= Supports.Count;
+                        List<StreamersClashPlayer> pom = GetPlayersExceptCaptains(Roles.Support);
+                        pom.ForEach(x =>
+                        {
+                            if (x.Role == role && !x.IsCaptain)
+                                avg += x.GetMMR();
+                            else if (x.SecondaryRole == role && !x.IsCaptain)
+                                avg += x.GetSecondaryMMR();
+                        });
+                        avg = (int)Math.Round((double)avg / pom.Count);
                         break;
                     }
             }
@@ -156,29 +197,72 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
         {
             List<StreamersClashPlayer> players = GetPlayersExceptCaptains();
 
-            // Count of players + 5 outputs for lines
-            int arrLen = players.Count + 5,
-                outIdx = 0;
+            List<string> res = new List<string>();
 
-            string[] res = new string[arrLen];
-
-            // Set Last role to Mid as it will trigger -ne on player role and lastRole for Toplaners 
-            Roles lastRole = Roles.Mid;
-
-            for(int i = 0; i < players.Count; i++, outIdx++)
+            // TODO: Shorten the code
+            res.Add($"{Roles.Top} avg points = {GetAverageRankOfRole(Roles.Top)}");
+            TopLaners.ForEach(x =>
             {
-                StreamersClashPlayer player = players[i];
-
-                if (player.Role != lastRole)
+                if(!x.IsCaptain)
                 {
-                    res[outIdx] = $"{player.Role} avg points = {GetAverageRankOfRole(player.Role)}";
-                    lastRole = player.Role;
-                    outIdx += 1;
+                    if (x.Role == Roles.Top)
+                        res.Add(x.ToString("D"));
+                    else if (x.SecondaryRole == Roles.Top)
+                        res.Add(x.ToString("S"));
                 }
-                res[outIdx] = player.ToString();
-            }
+                    
+            });
+            res.Add($"{Roles.Jungle} avg points = {GetAverageRankOfRole(Roles.Jungle)}");
+            Junglers.ForEach(x =>
+            {
+                if (!x.IsCaptain)
+                {
+                    if (x.Role == Roles.Jungle)
+                        res.Add(x.ToString("D"));
+                    else if (x.SecondaryRole == Roles.Jungle)
+                        res.Add(x.ToString("S"));
+                }
 
-            return res;
+            });
+            res.Add($"{Roles.Mid} avg points = {GetAverageRankOfRole(Roles.Mid)}");
+            Midlaners.ForEach(x =>
+            {
+                if (!x.IsCaptain)
+                {
+                    if (x.Role == Roles.Mid)
+                        res.Add(x.ToString("D"));
+                    else if (x.SecondaryRole == Roles.Mid)
+                        res.Add(x.ToString("S"));
+                }
+
+            });
+            res.Add($"{Roles.ADC} avg points = {GetAverageRankOfRole(Roles.ADC)}");
+            ADCarries.ForEach(x =>
+            {
+                if (!x.IsCaptain)
+                {
+                    if (x.Role == Roles.ADC)
+                        res.Add(x.ToString("D"));
+                    else if (x.SecondaryRole == Roles.ADC)
+                        res.Add(x.ToString("S"));
+                }
+
+            });
+            res.Add($"{Roles.Support} avg points = {GetAverageRankOfRole(Roles.Support)}");
+            Supports.ForEach(x =>
+            {
+                if (!x.IsCaptain)
+                {
+                    if (x.Role == Roles.Support)
+                        res.Add(x.ToString("D"));
+                    else if (x.SecondaryRole == Roles.Support)
+                        res.Add(x.ToString("S"));
+                }
+
+            });
+
+
+            return res.ToArray();
         }
 
         public List<StreamersClashPlayer> GetPlayersExceptCaptains()
@@ -190,6 +274,24 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
             res.AddRange(Midlaners.Where(x => !x.IsCaptain));
             res.AddRange(ADCarries.Where(x => !x.IsCaptain));
             res.AddRange(Supports.Where(x => !x.IsCaptain));
+
+            return res;
+        }
+
+        public List<StreamersClashPlayer> GetPlayersExceptCaptains(Roles role)
+        {
+            List<StreamersClashPlayer> res = new List<StreamersClashPlayer>();
+
+            if (role == Roles.Top)
+                return TopLaners.Where(x => !x.IsCaptain).ToList();
+            if (role == Roles.Jungle)
+                return Junglers.Where(x => !x.IsCaptain).ToList();
+            if (role == Roles.Mid)
+                return Midlaners.Where(x => !x.IsCaptain).ToList();
+            if (role == Roles.ADC)
+                return ADCarries.Where(x => !x.IsCaptain).ToList();
+            if (role == Roles.Support)
+                return Supports.Where(x => !x.IsCaptain).ToList();
 
             return res;
         }
