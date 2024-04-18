@@ -31,57 +31,20 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
         public StreamersClashResult(List<StreamersClashPlayer> topLaners, 
                                     List<StreamersClashPlayer> junglers, 
                                     List<StreamersClashPlayer> midlaners, 
-                                    List<StreamersClashPlayer> aDCarries, 
-                                    List<StreamersClashPlayer> supports,
-                                    bool sortPlayers = true)
+                                    List<StreamersClashPlayer> adCarries, 
+                                    List<StreamersClashPlayer> supports)
         {
             TopLaners = topLaners;
             Junglers = junglers;
             Midlaners = midlaners;
-            ADCarries = aDCarries;
+            ADCarries = adCarries;
             Supports = supports;
 
-            if (sortPlayers)
-                SortPlayers();
-
-            AssignBudgetToCaptains();
-        }
-
-        void SortPlayers()
-        {
-            TopLaners = TopLaners.OrderByDescending(x => x.GetMMR()).ToList();
-            Junglers = Junglers.OrderByDescending(x => x.GetMMR()).ToList();
-            Midlaners = Midlaners.OrderByDescending(x => x.GetMMR()).ToList();
-            ADCarries = ADCarries.OrderByDescending(x => x.GetMMR()).ToList();
-            Supports = Supports.OrderByDescending(x => x.GetMMR()).ToList();
-        }
-
-        void AssignBudgetToCaptains()
-        {
-            List<List<StreamersClashPlayer>> playerLists = new List<List<StreamersClashPlayer>>()
-            {
-                TopLaners,
-                Junglers,
-                Midlaners,
-                ADCarries,
-                Supports
-            };
-
-            playerLists.ForEach(x => x.ForEach(y =>
-            {
-                if(y.IsCaptain)
-                {
-                    int budget = GetAverageRankOfRole(Roles.Top) 
-                    + GetAverageRankOfRole(Roles.Jungle) 
-                    + GetAverageRankOfRole(Roles.Mid) 
-                    + GetAverageRankOfRole(Roles.ADC) 
-                    + GetAverageRankOfRole(Roles.Support);
-
-                    int xd = y.GetMMR();
-
-                    y.ChangeCaptainBudget(budget - y.GetMMR());
-                }
-            }));
+            TopLaners.Reverse();
+            Junglers.Reverse();
+            Midlaners.Reverse();
+            ADCarries.Reverse();
+            Supports.Reverse();
         }
 
         public int GetAverageRank()
@@ -200,9 +163,10 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
             List<string> res = new List<string>();
 
             // TODO: Shorten the code
+            res.Add($"Average points overall = {GetAverageRank()}");
             res.Add($"{Roles.Top} avg points = {GetAverageRankOfRole(Roles.Top)}");
             TopLaners.ForEach(x =>
-            {
+            {   
                 if(!x.IsCaptain)
                 {
                     if (x.Role == Roles.Top)

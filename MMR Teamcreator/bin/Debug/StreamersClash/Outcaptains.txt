@@ -1,4 +1,6 @@
-﻿Herdyn	P1	Herdyn	Top	86
-Gornagal	CH	Gorni	Jungle	75
-Xnapy	MA	XnapyCZ	Mid	77
-Ovdovovac	MA	Ovdovovac	Mid	77
+﻿https://twitch.tv/herdyn	CH	Herdyn	Top	920
+https://twitch.tv/xnapycz	CH	xnapy#main	Mid	870
+https://www.twitch.tv/kokiii_	D1	Haerın #EUNE	ADC	930
+youtube.com/robdiesalot/live	B2	RobDiesALot#1337 ??	Support	1110
+twitch.tv/spajKK	B3	spajkk#eune	Support	1120
+https://www.twitch.tv/tensterakdary/	B3	Sterakdary#EUNE	Support	1120

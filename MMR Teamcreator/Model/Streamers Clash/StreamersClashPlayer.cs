@@ -10,7 +10,13 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
     {
         public bool IsCaptain { get; private set; }
         public int CaptainBudget { get; private set; }
+        public int PlayerCost { get; set; }
         public Roles SecondaryRole { get; private set; }
+        public int SecondaryPlayerCost { get; set; }
+
+        public const int CaptainBaseBudget = 1200;
+        public const int BasePlayerCost = 200;
+        public const int PlayerRankStep = 10;
 
         public StreamersClashPlayer(string role, string secondaryRole, string twitch, string rank, string ingame, bool isCaptain = false) : base(role, twitch, rank, ingame)
         {
@@ -35,6 +41,22 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
             CaptainBudget = -1;
             this.SecondaryRole = Roles.None;
         }
+
+        /*public static override bool operator ==(StreamersClashPlayer ob1, StreamersClashPlayer ob2)
+        {
+            if (ob1 == null || ob2 == null)
+                return false;
+
+            return ob1.TwitchNick == ob2.TwitchNick && ob1.IngameNick == ob2.IngameNick && ob1.Rank == ob2.Rank;
+        }
+
+        public static override bool operator !=(StreamersClashPlayer ob1, StreamersClashPlayer ob2)
+        {
+            if (ob1 == null || ob2 == null)
+                return true;
+
+            return ob1.TwitchNick != ob2.TwitchNick || ob1.IngameNick != ob2.IngameNick || ob1.Rank != ob2.Rank;
+        }*/
 
         public bool ChangeCaptainBudget(int budget)
         {
@@ -84,14 +106,14 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
                     {
                         if (IsCaptain)
                             return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.Role}\t{this.CaptainBudget}";
-                        return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.Role}\t{this.GetMMR()}";
+                        return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.Role}\t{this.PlayerCost}";
                     }
                 // Secondary
                 case "S":
                     {
                         if (IsCaptain)
                             return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.Role}\t{this.CaptainBudget}";
-                        return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.SecondaryRole}\t{this.GetMMR()}";
+                        return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.SecondaryRole}\t{this.PlayerCost}";
                     }
                 default:
                     throw new FormatException($"The '{format}' string format is not supported!");

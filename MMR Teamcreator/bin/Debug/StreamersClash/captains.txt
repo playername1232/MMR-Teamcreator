@@ -1,4 +1,6 @@
-Xnapy:XnapyCZ:Mid:MA
-Ovdovovac:Ovdovovac:MID:MA
-Gornagal:Gorni:Jungle:CH
-Herdyn:Herdyn:Top:P1
+https://twitch.tv/herdyn;Herdyn;Top;CH;Top
+https://twitch.tv/xnapycz;xnapy#main;Mid;CH;Jungle
+https://www.twitch.tv/tensterakdary/;Sterakdary#EUNE;Support;B3;Top
+https://www.twitch.tv/kokiii_;Haerın #EUNE;ADC;D1;Support
+twitch.tv/spajKK;spajkk#eune;Support;B3;Support
+youtube.com/robdiesalot/live;RobDiesALot#1337 ??;Support;B2;Support

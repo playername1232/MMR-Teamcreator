@@ -13,6 +13,8 @@ using System.Windows.Media.TextFormatting;
 using DocumentFormat.OpenXml.Drawing.Diagrams;
 using MMR_Teamcreator.Model.Streamers_Clash;
 using System.Text;
+using System.Data.SqlClient;
+using ClosedXML.Excel;
 
 namespace MMR_Teamcreator
 {
@@ -497,25 +499,30 @@ namespace MMR_Teamcreator
 
                 Tuple<Roles, Roles> rolesTuple = new Tuple<Roles, Roles>(current.Role, current.SecondaryRole);
 
-                if(rolesTuple.Item1 == Roles.Top || rolesTuple.Item2 == Roles.Top)
+                if(rolesTuple.Item1 == Roles.Top)
                 {
-                    streamerTopList.Add(current);
+                    if(!streamerTopList.Any(x => x == current))
+                        streamerTopList.Add(current);
                 }
-                if(rolesTuple.Item1 == Roles.Jungle || rolesTuple.Item2 == Roles.Jungle)
+                if(rolesTuple.Item1 == Roles.Jungle)
                 {
-                    streamerJungleList.Add(current);
+                    if (!streamerJungleList.Any(x => x == current))
+                        streamerJungleList.Add(current);
                 }
-                if (rolesTuple.Item1 == Roles.Mid || rolesTuple.Item2 == Roles.Mid)
+                if (rolesTuple.Item1 == Roles.Mid)
                 {
-                    streamerMidList.Add(current);
+                    if (!streamerMidList.Any(x => x == current))
+                        streamerMidList.Add(current);
                 }
-                if (rolesTuple.Item1 == Roles.ADC || rolesTuple.Item2 == Roles.ADC)
+                if (rolesTuple.Item1 == Roles.ADC)
                 {
-                    streamerADCList.Add(current);
+                    if (!streamerADCList.Any(x => x == current))
+                        streamerADCList.Add(current);
                 }
-                if (rolesTuple.Item1 == Roles.Support || rolesTuple.Item2 == Roles.Support)
+                if (rolesTuple.Item1 == Roles.Support)
                 {
-                    streamerSupportList.Add(current);
+                    if (!streamerSupportList.Any(x => x == current))
+                        streamerSupportList.Add(current);
                 }
             }
 
@@ -524,7 +531,7 @@ namespace MMR_Teamcreator
             for (int i = 0; i < captainContent.Length; i++)
             {
                 // Twitch_Nick:INGAME_NICK:ROLE:RANK
-                string[] split = captainContent[i].Split(':');
+                string[] split = captainContent[i].Split(';');
 
                 StreamersClashPlayer current = new StreamersClashPlayer(role: split[2], twitch: split[0], rank: split[3], ingame: split[1], isCaptain: true);
 
@@ -557,6 +564,32 @@ namespace MMR_Teamcreator
                         }
                 }
             }
+
+            Func<List<StreamersClashPlayer>, List<StreamersClashPlayer>> SortLineByPlayerCost = (players) =>
+            {
+                List<StreamersClashPlayer> sorted = new List<StreamersClashPlayer>();
+                players.OrderBy(x => (int)x.Rank).ToList().ForEach(x => sorted.Add(x));
+
+                int num = 0;
+                sorted.ForEach(x => num += (int)x.Rank);
+                int avg = num / sorted.Count;
+
+                for (int i = 0; i < sorted.Count; i++)
+                {
+                    StreamersClashPlayer current = sorted[i];
+                    current.PlayerCost = StreamersClashPlayer.BasePlayerCost + (((int)current.Rank - avg) * StreamersClashPlayer.PlayerRankStep);
+                    if (current.IsCaptain)
+                        current.ChangeCaptainBudget(StreamersClashPlayer.CaptainBaseBudget - current.PlayerCost);
+                }
+
+                return sorted.OrderBy(x => x.PlayerCost).ToList();
+            };
+
+            streamerTopList = SortLineByPlayerCost(streamerTopList);
+            streamerJungleList = SortLineByPlayerCost(streamerJungleList);
+            streamerMidList = SortLineByPlayerCost(streamerMidList);
+            streamerADCList = SortLineByPlayerCost(streamerADCList);
+            streamerSupportList = SortLineByPlayerCost(streamerSupportList);
 
             StreamerResult = new StreamersClashResult(streamerTopList, streamerJungleList, streamerMidList, streamerADCList, streamerSupportList);
         }

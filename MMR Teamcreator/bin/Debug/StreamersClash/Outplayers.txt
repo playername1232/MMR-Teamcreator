@@ -1,131 +1,74 @@
-﻿Top avg points = 23
-https://www.twitch.tv/mortsche	CH	tarbík z duny#zvíře	Top	31
-https://www.twitch.tv/zukyy	GM	zuky#kat	Top	30
-https://www.twitch.tv/springyylol	MA	Springy#pyke	Top	29
-https://www.twitch.tv/loldyego	MA	african power#EUW	Top	29
-https://twitch.tv/prachoun	MA	Warlord Prachoun#eune	Top	29
-https://www.twitch.tv/bandygod	MA	Baby Bandito#Bandy	Top	29
-twitch.tv/sgooob	MA	Ross Crock#euw	Top	29
-https://www.twitch.tv/cantzer	D1	EP Cantzer#ZYZZ	Top	28
-twitch.tv/jancexoxo	D1	jancexoxo#eune	Top	28
-https://www.twitch.tv/zolik22	D2	zolik#EUNE	Top	27
-Novicatko	D2	Novicatko#IDK	Top	27
-https://www.twitch.tv/mightymaty	D4	MighyMaty#EUNE	Top	25
-https://www.twitch.tv/itsnexone	D4	ItsNex#EUNE	Top	25
-twitch.tv/xdkamaitachi	E1	xdkamaitachi#14021	Top	24
-twitch.tv/xdkamaitachi	E1	xdkamaitachi#14021	Top	24
-https://www.twitch.tv/hvezdickovy_maniak/	E2	FF Hvězdička#EUNE	Top	23
-https://m.twitch.tv/isoiiika	E3	soiiika#jay	Top	22
-https://www.twitch.tv/snooperinoo	G2	snooperinoo#eune	Top	15
-https://www.twitch.tv/henicek	S3	henicek#eune	Top	10
-https://www.twitch.tv/mlemi	S3	mlemiOW#NGU	Top	10
-Mileyslife	B4	Mileyyy#IDK	Top	5
-youtube.com/robdiesalot/live	I2	RobDiesALot#IDK	Top	3
-Jungle avg points = 20
-https://www.twitch.tv/just_plutoo	CH	PIutoo#GoD	Jungle	31
-https://m.twitch.tv/adull3k	MA	KevinVelky#EUNE	Jungle	29
-twitch.tv/sgooob	MA	Ross Crock#euw	Jungle	29
-https://www.twitch.tv/cyagonize	MA	Cyagonize#IDK	Jungle	29
-https://www.twitch.tv/dvorson	MA	Leónidás#EUW	Jungle	29
-Novicatko	D2	Novicatko#IDK	Jungle	27
-https://www.twitch.tv/weednek	D2	WeeDnek#EUNE	Jungle	27
-twitch.tv/xdkamaitachi	E1	xdkamaitachi#14021	Jungle	24
-twitch.tv/xdkamaitachi	E1	xdkamaitachi#14021	Jungle	24
-https://www.twitch.tv/hvezdickovy_maniak/	E2	FF Hvězdička#EUNE	Jungle	23
-https://www.twitch.tv/sgform	E2	eSGi #15624	Jungle	23
-https://twitch.tv/pomelocha	E4	Pomelocha#IDK	Jungle	21
-https://www.twitch.tv/polcarka1	E4	Polcina#EUNE	Jungle	21
-https://www.twitch.tv/domovnikofc	P4	domovnikofc#666	Jungle	17
-https://www.twitch.tv/snooperinoo	G2	snooperinoo#eune	Jungle	15
-https://www.twitch.tv/kellwiin	G3	Kellwiin#EUNE	Jungle	14
-https://www.twitch.tv/snehule_	G4	Sněhule#IDK	Jungle	13
-https://www.twitch.tv/tremortheghul	S1	tremorkooo#EUNE	Jungle	12
-https://www.twitch.tv/jorantheviking	S2	JoranTheViking#Auss	Jungle	11
-twitch.tv/tatianatta	B3	Tatianatta#IDK	Jungle	6
-twitch.tv/deethane	B3	DeeThane#EUNE	Jungle	6
-Twitch.tv/cuky222	B3	Cuky222#EUNE	Jungle	6
-Mid avg points = 22
-https://www.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Mid	31
-https://www.twitch.tv/mortsche	CH	tarbík z duny#zvíře	Mid	31
-https://www.twitch.tv/chimer123	CH	Scrub Daddy#Dish1 PŘIJEDU NA BMX #EUNE	Mid	31
-https://www.twitch.tv/falazury	CH	Changbin #3RACH	Mid	31
-https://www.twitch.tv/knezaxd	GM	DOBRÝ RÁNO#TOPG	Mid	30
-https://www.twitch.tv/zukyy	GM	zuky#kat	Mid	30
-https://www.twitch.tv/loldyego	MA	african power#EUW	Mid	29
-https://www.twitch.tv/bandygod	MA	Baby Bandito#Bandy	Mid	29
-https://www.twitch.tv/cyagonize	MA	Cyagonize#IDK	Mid	29
-https://www.twitch.tv/dvorson	MA	Leónidás#EUW	Mid	29
-https://www.twitch.tv/cantzer	D1	EP Cantzer#ZYZZ	Mid	28
-twitch.tv/jancexoxo	D1	jancexoxo#eune	Mid	28
-twitch.tv/charmiie	D2	Charmie#IDK	Mid	27
-https://www.twitch.tv/davkouny	D3	EXE Davkouny#IDK	Mid	26
-https://www.twitch.tv/messekery	D3	FNC Messekery#EUNE	Mid	26
-https://twitch.tv/jjpasak	D4	JJPasakEUNE #9116	Mid	25
-https://www.twitch.tv/itsnexone	D4	ItsNex#EUNE	Mid	25
-https://www.twitch.tv/natys	E1	Nątys#EUNE	Mid	24
-https://www.twitch.tv/story917	E2	Shadow of Konoha#EUNE	Mid	23
-https://m.twitch.tv/isoiiika	E3	soiiika#jay	Mid	22
-https://www.twitch.tv/capitanstewie	E4	Capitan Pete#IDK	Mid	21
-https://www.twitch.tv/charlienpuff	P2	Clancyas#3867	Mid	19
-https://twitch.tv/x_natyna_x	P2	Littlefoxii#IDK	Mid	19
-https://www.twitch.tv/kellwiin	G3	Kellwiin#EUNE	Mid	14
-https://www.twitch.tv/michal_	G3	Michal Podjebátko#IDK	Mid	14
-https://www.twitch.tv/henicek	S3	henicek#eune	Mid	10
-www.twitch.tv/miss_hell_	B2	Zázrak#IDK	Mid	7
-https://www.twitch.tv/vvudy	B2	vvudy#vvudy	Mid	7
-twitch.tv/tatianatta	B3	Tatianatta#IDK	Mid	6
-Mileyslife	B4	Mileyyy#IDK	Mid	5
-twitch.tv/spajKK	I2	spajkk#eune	Mid	3
+﻿Average points overall = 20
+Top avg points = 23
+https://www.twitch.tv/mortsche	CH	tarbík z duny#zvíře	Top	280
+https://www.twitch.tv/bandygod	MA	Baby Bandito#Bandy	Top	260
+https://twitch.tv/prachoun	MA	Warlord Prachoun#eune	Top	260
+twitch.tv/jancexoxo	D1	jancexoxo#eune	Top	250
+Novicatko	D2	Novicatko#EUNE	Top	240
+https://www.twitch.tv/zolik22	D4	zolik#EUNE	Top	220
+https://www.twitch.tv/hvezdickovy_maniak/	E2	FF Hvězdička#EUNE	Top	200
+https://www.twitch.tv/snooperinoo	P4	snooperinoo#eune	Top	140
+https://www.twitch.tv/mlemi	S3	mlemiOW#NGU	Top	70
+https://www.twitch.tv/henicek	S4	henicek#eune	Top	60
+Jungle avg points = 23
+https://www.twitch.tv/just_plutoo	CH	PIutoo#GoD	Jungle	290
+https://www.twitch.tv/mafinskrr	CH	SalazarZmijozel#Slyth	Jungle	290
+https://www.twitch.tv/dvorson	MA	Leónidás#EUW	Jungle	270
+https://www.twitch.tv/weednek	MA	WeeDnek#EUNE	Jungle	270
+https://www.twitch.tv/cyagonize	MA	Cyagonize#EUNE	Jungle	270
+twitch.tv/sgooob	MA	Ross Crock#euw	Jungle	270
+https://m.twitch.tv/adull3k	MA	KevinVelky#EUNE	Jungle	270
+twitch.tv/xdkamaitachi	E1	xdkamaitachi#14021	Jungle	220
+https://www.twitch.tv/sgform	E3	eSGi #15624	Jungle	200
+https://www.twitch.tv/snehule_	G4	Sněhule	Jungle	110
+https://www.twitch.tv/domovnikofc	S1	domovnikofc#666	Jungle	100
+https://www.twitch.tv/jorantheviking	S4	JoranTheViking#Auss	Jungle	70
+https://www.twitch.tv/tremortheghul	S4	tremorkooo#EUNE	Jungle	70
+Mid avg points = 18
+https://www.twitch.tv/zukyy	GM	zuky#kat	Mid	320
+https://www.twitch.tv/loldyego	MA	african power#EUW	Mid	310
+twitch.tv/charmiie	D2	Charmie#6969	Mid	290
+https://www.twitch.tv/messekery	D3	FNC Messekery#EUNE	Mid	280
+https://www.twitch.tv/cantzer	D3	EP Cantzer#ZYZZ	Mid	280
+https://www.twitch.tv/itsnexone	D4	ItsNex#EUNE	Mid	270
+https://m.twitch.tv/isoiiika	E2	soiiika#jay	Mid	250
+https://www.twitch.tv/story917	E2	Shadow of Konoha#EUNE	Mid	250
+https://www.twitch.tv/kellwiin	G3	Kellwiin#EUNE	Mid	160
+twitch.tv/tatianatta	B3	Tatianatta	Mid	80
+Mileyslife	B3	MileySmileyYT#EUNE	Mid	80
+https://www.twitch.tv/andrej_kalinin	B3	AndrejKa#7393	Mid	80
+https://www.twitch.tv/stratycs	B3	Straty#XGOD	Mid	80
+www.twitch.tv/miss_hell_	B4	Zázrak#EUNE	Mid	70
 ADC avg points = 21
-https://m.twitch.tv/kapesnik69	CH	Kapesnik69#6969	ADC	31
-https://www.twitch.tv/chimer123	CH	Scrub Daddy#Dish1 PŘIJEDU NA BMX #EUNE	ADC	31
-https://www.twitch.tv/knezaxd	GM	DOBRÝ RÁNO#TOPG	ADC	30
-https://www.twitch.tv/zolik22	D2	zolik#EUNE	ADC	27
-twitch.tv/charmiie	D2	Charmie#IDK	ADC	27
-https://www.twitch.tv/davkouny	D3	EXE Davkouny#IDK	ADC	26
-https://www.twitch.tv/messekery	D3	FNC Messekery#EUNE	ADC	26
-https://www.twitch.tv/sovaz1	D3	BigWolfii#EUNE1	ADC	26
-https://www.twitch.tv/tofusenshi	D4	Tofusenshi#Eune	ADC	25
-https://www.twitch.tv/story917	E2	Shadow of Konoha#EUNE	ADC	23
-https://www.twitch.tv/fufinkaa	E2	Good Karma#IDK	ADC	23
-https://www.twitch.tv/capitanstewie	E4	Capitan Pete#IDK	ADC	21
-twitch.tv/kajaryuu	E4	Senilní důchodce#KAREL	ADC	21
-https://twitch.tv/pomelocha	E4	Pomelocha#IDK	ADC	21
-https://www.twitch.tv/zeldok_	G2	Zeldok#YOLOs	ADC	15
-https://www.twitch.tv/abanooo	G2	Abano#IDK	ADC	15
-https://www.twitch.tv/snehule_	G4	Sněhule#IDK	ADC	13
-https://www.twitch.tv/tremortheghul	S1	tremorkooo#EUNE	ADC	12
-https://www.twitch.tv/mlemi	S3	mlemiOW#NGU	ADC	10
-https://www.twitch.tv/rajdeerka	S4	Rajdeerka#IDK	ADC	9
-twitch.tv/deethane	B3	DeeThane#EUNE	ADC	6
+https://www.twitch.tv/chimer123	GM	Scrub Daddy#Dish1 PŘIJEDU NA BMX #EUNE	ADC	290
+https://www.twitch.tv/knezaxd	GM	DOBRÝ RÁNO#TOPG	ADC	290
+https://www.twitch.tv/soraval1	MA	I LIKE EGIRLS #SORA	ADC	280
+https://www.twitch.tv/davkouny	D4	EXEDavkouny#EUNE	ADC	240
+twitch.tv/kajaryuu	E3	Senilní důchodce#KAREL	ADC	210
+https://twitch.tv/pomelocha	E4	Pomelocha#EUNE	ADC	200
+https://www.twitch.tv/capitanstewie	E4	Capitan Pete#EUNE	ADC	200
+https://www.twitch.tv/sovaz1	P1	BigWolfii#EUNE1	ADC	190
+https://www.twitch.tv/tropixoff	G1	nEu TropiX#eune	ADC	150
+https://www.twitch.tv/abanooo	G4	Abano#KekW	ADC	120
+twitch.tv/deethane	B3	DeeThane#EUNE	ADC	50
 Support avg points = 20
-https://www.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Support	31
-https://m.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Support	31
-https://www.twitch.tv/just_plutoo	CH	PIutoo#GoD	Support	31
-https://www.twitch.tv/falazury	CH	Changbin #3RACH	Support	31
-https://www.twitch.tv/springyylol	MA	Springy#pyke	Support	29
-https://m.twitch.tv/adull3k	MA	KevinVelky#EUNE	Support	29
-https://twitch.tv/prachoun	MA	Warlord Prachoun#eune	Support	29
-https://www.twitch.tv/weednek	D2	WeeDnek#EUNE	Support	27
-https://www.twitch.tv/sovaz1	D3	BigWolfii#EUNE1	Support	26
-https://twitch.tv/jjpasak	D4	JJPasakEUNE #9116	Support	25
-https://www.twitch.tv/mightymaty	D4	MighyMaty#EUNE	Support	25
-https://www.twitch.tv/tofusenshi	D4	Tofusenshi#Eune	Support	25
-https://www.twitch.tv/natys	E1	Nątys#EUNE	Support	24
-https://www.twitch.tv/fufinkaa	E2	Good Karma#IDK	Support	23
-https://www.twitch.tv/sgform	E2	eSGi #15624	Support	23
-twitch.tv/kajaryuu	E4	Senilní důchodce#KAREL	Support	21
-https://www.twitch.tv/polcarka1	E4	Polcina#EUNE	Support	21
-https://www.twitch.tv/charlienpuff	P2	Clancyas#3867	Support	19
-https://twitch.tv/x_natyna_x	P2	Littlefoxii#IDK	Support	19
-https://www.twitch.tv/domovnikofc	P4	domovnikofc#666	Support	17
-https://www.twitch.tv/zeldok_	G2	Zeldok#YOLOs	Support	15
-https://www.twitch.tv/abanooo	G2	Abano#IDK	Support	15
-https://www.twitch.tv/michal_	G3	Michal Podjebátko#IDK	Support	14
-https://www.twitch.tv/jorantheviking	S2	JoranTheViking#Auss	Support	11
-https://www.twitch.tv/rajdeerka	S4	Rajdeerka#IDK	Support	9
-www.twitch.tv/miss_hell_	B2	Zázrak#IDK	Support	7
-https://www.twitch.tv/vvudy	B2	vvudy#vvudy	Support	7
-Twitch.tv/cuky222	B3	Cuky222#EUNE	Support	6
-youtube.com/robdiesalot/live	I2	RobDiesALot#IDK	Support	3
-twitch.tv/spajKK	I2	spajkk#eune	Support	3
+https://www.twitch.tv/falazury	CH	Changbin #3RACH	Support	330
+https://m.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Support	330
+https://www.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Support	330
+https://www.twitch.tv/springyylol	MA	Springy#pyke	Support	310
+https://www.twitch.tv/tofusenshi	D4	Tofusenshi#Eune	Support	270
+https://www.twitch.tv/mightymaty	D4	MighyMaty#EUNE	Support	270
+https://twitch.tv/jjpasak	D4	JJPasakEUNE #9116	Support	270
+https://www.twitch.tv/natys	E2	Nątys#EUNE	Support	250
+https://www.twitch.tv/fufinkaa	E2	Good Karma#EUNE	Support	250
+https://www.twitch.tv/polcarka1	E4	Polcina#EUNE	Support	230
+https://www.twitch.tv/megaskuci	E4	MegaSkuci #EUNE	Support	230
+https://www.twitch.tv/charlienpuff	P2	Clancyas#3867	Support	210
+https://twitch.tv/x_natyna_x	P4	LittleFoxii#EUNE	Support	190
+Twitch.tv/seddsylive	G1	Seddsy#Live	Support	180
+https://www.twitch.tv/zeldok_	G2	Zeldok#YOLOs	Support	170
+https://www.twitch.tv/michal_	G3	MichalPodjebátko#EUNE	Support	160
+https://www.twitch.tv/rajdeerka	S4	Rajdeerka#TWB	Support	110
+Twitch.tv/Naruto21Cz	S4	Naruto21Cz#EUCZ	Support	110
+Twitch.tv/cuky222	B3	Cuky222#EUNE	Support	80
+https://www.twitch.tv/vvudy	B3	vvudy#vvudy	Support	80

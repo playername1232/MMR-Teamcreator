@@ -33,7 +33,7 @@
     Grandmaster_M = 30,
     Challenger_H = 31
 }
-public enum Roles
+public enum Roles : int
 {
     Top = 0,
     Jungle = 1,
