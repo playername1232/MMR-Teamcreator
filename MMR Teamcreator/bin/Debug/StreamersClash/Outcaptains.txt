@@ -1,6 +1,7 @@
-﻿https://twitch.tv/herdyn	CH	Herdyn	Top	920
-https://twitch.tv/xnapycz	CH	xnapy#main	Mid	870
-https://www.twitch.tv/kokiii_	D1	Haerın #EUNE	ADC	930
-youtube.com/robdiesalot/live	B2	RobDiesALot#1337 ??	Support	1110
-twitch.tv/spajKK	B3	spajkk#eune	Support	1120
-https://www.twitch.tv/tensterakdary/	B3	Sterakdary#EUNE	Support	1120
+﻿https://twitch.tv/herdyn	G2	Herdyn	Top	Top	880
+https://twitch.tv/xnapycz	D1	xnapy#main	Mid	Jungle	710
+www.twitch.tv/freezecz	MA	Freeze#Euw1	ADC	Mid	740
+https://www.twitch.tv/kokiii_	D3	Haerın #EUNE	ADC	Support	770
+youtube.com/robdiesalot/live	B2	RobDiesALot#1337	Support	Support	920
+twitch.tv/spajKK	B3	spajkk#eune	Support	Support	930
+https://www.twitch.tv/tensterakdary/	B3	Sterakdary#EUNE	Support	Top	930

@@ -530,10 +530,11 @@ namespace MMR_Teamcreator
 
             for (int i = 0; i < captainContent.Length; i++)
             {
-                // Twitch_Nick:INGAME_NICK:ROLE:RANK
+                // Twitch_Nick:INGAME_NICK:ROLE:SECONDARY_ROLE:RANK
                 string[] split = captainContent[i].Split(';');
 
-                StreamersClashPlayer current = new StreamersClashPlayer(role: split[2], twitch: split[0], rank: split[3], ingame: split[1], isCaptain: true);
+                StreamersClashPlayer current = new StreamersClashPlayer(role: split[2], secondaryRole: split[3],
+                    twitch: split[0], rank: split[4], ingame: split[1], isCaptain: true);
 
                 switch (current.Role)
                 {
@@ -582,7 +583,7 @@ namespace MMR_Teamcreator
                         current.ChangeCaptainBudget(StreamersClashPlayer.CaptainBaseBudget - current.PlayerCost);
                 }
 
-                return sorted.OrderBy(x => x.PlayerCost).ToList();
+                return sorted.OrderBy(x => x.PlayerCost).Reverse().ToList();
             };
 
             streamerTopList = SortLineByPlayerCost(streamerTopList);

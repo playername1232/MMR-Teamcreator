@@ -66,5 +66,5 @@ Twitch.tv/cuky222;Cuky222#EUNE;Support;Jungle;B3
 https://www.twitch.tv/jorantheviking;JoranTheViking#Auss;Jungle;Support;S4
 twitch.tv/charmiie;Charmie#6969;Mid;ADC;D2
 twitch.tv/xdkamaitachi;xdkamaitachi#14021;Jungle;Top;E1
-https://www.twitch.tv/chimer123;Scrub Daddy#Dish1 PŘIJEDU NA BMX #EUNE;ADC;Mid;GM
+https://www.twitch.tv/chimer123;Scrub Daddy#Dish1;ADC;Mid;GM
 https://www.twitch.tv/falazury;Changbin #3RACH;Support;Mid;CH

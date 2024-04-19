@@ -1,4 +1,4 @@
-﻿public enum Divisions
+﻿public enum Divisions : int
 {
     //Div = Value
     Iron_4 = 1,

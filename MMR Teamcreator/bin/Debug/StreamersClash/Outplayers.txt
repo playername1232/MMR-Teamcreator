@@ -11,64 +11,64 @@ https://www.twitch.tv/snooperinoo	P4	snooperinoo#eune	Top	140
 https://www.twitch.tv/mlemi	S3	mlemiOW#NGU	Top	70
 https://www.twitch.tv/henicek	S4	henicek#eune	Top	60
 Jungle avg points = 23
-https://www.twitch.tv/just_plutoo	CH	PIutoo#GoD	Jungle	290
-https://www.twitch.tv/mafinskrr	CH	SalazarZmijozel#Slyth	Jungle	290
-https://www.twitch.tv/dvorson	MA	Leónidás#EUW	Jungle	270
-https://www.twitch.tv/weednek	MA	WeeDnek#EUNE	Jungle	270
-https://www.twitch.tv/cyagonize	MA	Cyagonize#EUNE	Jungle	270
-twitch.tv/sgooob	MA	Ross Crock#euw	Jungle	270
-https://m.twitch.tv/adull3k	MA	KevinVelky#EUNE	Jungle	270
-twitch.tv/xdkamaitachi	E1	xdkamaitachi#14021	Jungle	220
-https://www.twitch.tv/sgform	E3	eSGi #15624	Jungle	200
-https://www.twitch.tv/snehule_	G4	Sněhule	Jungle	110
-https://www.twitch.tv/domovnikofc	S1	domovnikofc#666	Jungle	100
-https://www.twitch.tv/jorantheviking	S4	JoranTheViking#Auss	Jungle	70
-https://www.twitch.tv/tremortheghul	S4	tremorkooo#EUNE	Jungle	70
+https://www.twitch.tv/just_plutoo	CH	PIutoo#GoD	Jungle	280
+https://www.twitch.tv/mafinskrr	CH	SalazarZmijozel#Slyth	Jungle	280
+https://www.twitch.tv/dvorson	MA	Leónidás#EUW	Jungle	260
+https://www.twitch.tv/weednek	MA	WeeDnek#EUNE	Jungle	260
+https://www.twitch.tv/cyagonize	MA	Cyagonize#EUNE	Jungle	260
+twitch.tv/sgooob	MA	Ross Crock#euw	Jungle	260
+https://m.twitch.tv/adull3k	MA	KevinVelky#EUNE	Jungle	260
+twitch.tv/xdkamaitachi	E1	xdkamaitachi#14021	Jungle	210
+https://www.twitch.tv/sgform	E3	eSGi #15624	Jungle	190
+https://www.twitch.tv/snehule_	G4	Sněhule	Jungle	100
+https://www.twitch.tv/domovnikofc	S1	domovnikofc#666	Jungle	90
+https://www.twitch.tv/jorantheviking	S4	JoranTheViking#Auss	Jungle	60
+https://www.twitch.tv/tremortheghul	S4	tremorkooo#EUNE	Jungle	60
 Mid avg points = 18
-https://www.twitch.tv/zukyy	GM	zuky#kat	Mid	320
-https://www.twitch.tv/loldyego	MA	african power#EUW	Mid	310
-twitch.tv/charmiie	D2	Charmie#6969	Mid	290
-https://www.twitch.tv/messekery	D3	FNC Messekery#EUNE	Mid	280
-https://www.twitch.tv/cantzer	D3	EP Cantzer#ZYZZ	Mid	280
-https://www.twitch.tv/itsnexone	D4	ItsNex#EUNE	Mid	270
-https://m.twitch.tv/isoiiika	E2	soiiika#jay	Mid	250
-https://www.twitch.tv/story917	E2	Shadow of Konoha#EUNE	Mid	250
-https://www.twitch.tv/kellwiin	G3	Kellwiin#EUNE	Mid	160
-twitch.tv/tatianatta	B3	Tatianatta	Mid	80
-Mileyslife	B3	MileySmileyYT#EUNE	Mid	80
-https://www.twitch.tv/andrej_kalinin	B3	AndrejKa#7393	Mid	80
-https://www.twitch.tv/stratycs	B3	Straty#XGOD	Mid	80
-www.twitch.tv/miss_hell_	B4	Zázrak#EUNE	Mid	70
+https://www.twitch.tv/zukyy	GM	zuky#kat	Mid	310
+https://www.twitch.tv/loldyego	MA	african power#EUW	Mid	300
+twitch.tv/charmiie	D2	Charmie#6969	Mid	280
+https://www.twitch.tv/messekery	D3	FNC Messekery#EUNE	Mid	270
+https://www.twitch.tv/cantzer	D3	EP Cantzer#ZYZZ	Mid	270
+https://www.twitch.tv/itsnexone	D4	ItsNex#EUNE	Mid	260
+https://m.twitch.tv/isoiiika	E2	soiiika#jay	Mid	240
+https://www.twitch.tv/story917	E2	Shadow of Konoha#EUNE	Mid	240
+https://www.twitch.tv/kellwiin	G3	Kellwiin#EUNE	Mid	150
+twitch.tv/tatianatta	B3	Tatianatta	Mid	70
+Mileyslife	B3	MileySmileyYT#EUNE	Mid	70
+https://www.twitch.tv/andrej_kalinin	B3	AndrejKa#7393	Mid	70
+https://www.twitch.tv/stratycs	B3	Straty#XGOD	Mid	70
+www.twitch.tv/miss_hell_	B4	Zázrak#EUNE	Mid	60
 ADC avg points = 21
-https://www.twitch.tv/chimer123	GM	Scrub Daddy#Dish1 PŘIJEDU NA BMX #EUNE	ADC	290
-https://www.twitch.tv/knezaxd	GM	DOBRÝ RÁNO#TOPG	ADC	290
-https://www.twitch.tv/soraval1	MA	I LIKE EGIRLS #SORA	ADC	280
-https://www.twitch.tv/davkouny	D4	EXEDavkouny#EUNE	ADC	240
-twitch.tv/kajaryuu	E3	Senilní důchodce#KAREL	ADC	210
-https://twitch.tv/pomelocha	E4	Pomelocha#EUNE	ADC	200
-https://www.twitch.tv/capitanstewie	E4	Capitan Pete#EUNE	ADC	200
-https://www.twitch.tv/sovaz1	P1	BigWolfii#EUNE1	ADC	190
-https://www.twitch.tv/tropixoff	G1	nEu TropiX#eune	ADC	150
-https://www.twitch.tv/abanooo	G4	Abano#KekW	ADC	120
-twitch.tv/deethane	B3	DeeThane#EUNE	ADC	50
+https://www.twitch.tv/chimer123	GM	Scrub Daddy#Dish1	ADC	270
+https://www.twitch.tv/knezaxd	GM	DOBRÝ RÁNO#TOPG	ADC	270
+https://www.twitch.tv/soraval1	MA	I LIKE EGIRLS #SORA	ADC	260
+https://www.twitch.tv/davkouny	D4	EXEDavkouny#EUNE	ADC	220
+twitch.tv/kajaryuu	E3	Senilní důchodce#KAREL	ADC	190
+https://twitch.tv/pomelocha	E4	Pomelocha#EUNE	ADC	180
+https://www.twitch.tv/capitanstewie	E4	Capitan Pete#EUNE	ADC	180
+https://www.twitch.tv/sovaz1	P1	BigWolfii#EUNE1	ADC	170
+https://www.twitch.tv/tropixoff	G1	nEu TropiX#eune	ADC	130
+https://www.twitch.tv/abanooo	G4	Abano#KekW	ADC	100
+twitch.tv/deethane	B3	DeeThane#EUNE	ADC	30
 Support avg points = 20
-https://www.twitch.tv/falazury	CH	Changbin #3RACH	Support	330
-https://m.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Support	330
-https://www.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Support	330
-https://www.twitch.tv/springyylol	MA	Springy#pyke	Support	310
-https://www.twitch.tv/tofusenshi	D4	Tofusenshi#Eune	Support	270
-https://www.twitch.tv/mightymaty	D4	MighyMaty#EUNE	Support	270
-https://twitch.tv/jjpasak	D4	JJPasakEUNE #9116	Support	270
-https://www.twitch.tv/natys	E2	Nątys#EUNE	Support	250
-https://www.twitch.tv/fufinkaa	E2	Good Karma#EUNE	Support	250
-https://www.twitch.tv/polcarka1	E4	Polcina#EUNE	Support	230
-https://www.twitch.tv/megaskuci	E4	MegaSkuci #EUNE	Support	230
-https://www.twitch.tv/charlienpuff	P2	Clancyas#3867	Support	210
-https://twitch.tv/x_natyna_x	P4	LittleFoxii#EUNE	Support	190
-Twitch.tv/seddsylive	G1	Seddsy#Live	Support	180
-https://www.twitch.tv/zeldok_	G2	Zeldok#YOLOs	Support	170
-https://www.twitch.tv/michal_	G3	MichalPodjebátko#EUNE	Support	160
-https://www.twitch.tv/rajdeerka	S4	Rajdeerka#TWB	Support	110
-Twitch.tv/Naruto21Cz	S4	Naruto21Cz#EUCZ	Support	110
-Twitch.tv/cuky222	B3	Cuky222#EUNE	Support	80
-https://www.twitch.tv/vvudy	B3	vvudy#vvudy	Support	80
+https://www.twitch.tv/falazury	CH	Changbin #3RACH	Support	320
+https://m.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Support	320
+https://www.twitch.tv/kapesnik69	CH	Kapesnik69#6969	Support	320
+https://www.twitch.tv/springyylol	MA	Springy#pyke	Support	300
+https://www.twitch.tv/tofusenshi	D4	Tofusenshi#Eune	Support	260
+https://www.twitch.tv/mightymaty	D4	MighyMaty#EUNE	Support	260
+https://twitch.tv/jjpasak	D4	JJPasakEUNE #9116	Support	260
+https://www.twitch.tv/natys	E2	Nątys#EUNE	Support	240
+https://www.twitch.tv/fufinkaa	E2	Good Karma#EUNE	Support	240
+https://www.twitch.tv/polcarka1	E4	Polcina#EUNE	Support	220
+https://www.twitch.tv/megaskuci	E4	MegaSkuci #EUNE	Support	220
+https://www.twitch.tv/charlienpuff	P2	Clancyas#3867	Support	200
+https://twitch.tv/x_natyna_x	P4	LittleFoxii#EUNE	Support	180
+Twitch.tv/seddsylive	G1	Seddsy#Live	Support	170
+https://www.twitch.tv/zeldok_	G2	Zeldok#YOLOs	Support	160
+https://www.twitch.tv/michal_	G3	MichalPodjebátko#EUNE	Support	150
+https://www.twitch.tv/rajdeerka	S4	Rajdeerka#TWB	Support	100
+Twitch.tv/Naruto21Cz	S4	Naruto21Cz#EUCZ	Support	100
+Twitch.tv/cuky222	B3	Cuky222#EUNE	Support	70
+https://www.twitch.tv/vvudy	B3	vvudy#vvudy	Support	70

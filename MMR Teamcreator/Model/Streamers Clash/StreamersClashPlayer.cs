@@ -14,8 +14,8 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
         public Roles SecondaryRole { get; private set; }
         public int SecondaryPlayerCost { get; set; }
 
-        public const int CaptainBaseBudget = 1200;
-        public const int BasePlayerCost = 200;
+        public const int CaptainBaseBudget = 1000;
+        public const int BasePlayerCost = 190;
         public const int PlayerRankStep = 10;
 
         public StreamersClashPlayer(string role, string secondaryRole, string twitch, string rank, string ingame, bool isCaptain = false) : base(role, twitch, rank, ingame)
@@ -42,21 +42,6 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
             this.SecondaryRole = Roles.None;
         }
 
-        /*public static override bool operator ==(StreamersClashPlayer ob1, StreamersClashPlayer ob2)
-        {
-            if (ob1 == null || ob2 == null)
-                return false;
-
-            return ob1.TwitchNick == ob2.TwitchNick && ob1.IngameNick == ob2.IngameNick && ob1.Rank == ob2.Rank;
-        }
-
-        public static override bool operator !=(StreamersClashPlayer ob1, StreamersClashPlayer ob2)
-        {
-            if (ob1 == null || ob2 == null)
-                return true;
-
-            return ob1.TwitchNick != ob2.TwitchNick || ob1.IngameNick != ob2.IngameNick || ob1.Rank != ob2.Rank;
-        }*/
 
         public bool ChangeCaptainBudget(int budget)
         {
@@ -71,15 +56,10 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
 
         public int GetSecondaryMMR()
         {
-            List<string> ranksstr = new List<string>();
-            List<int> rankmmr = new List<int>();
-            Dictionary<string, int> ranks = new Dictionary<string, int>();
+            List<string> ranksstr = Enum.GetNames(typeof(Divisions)).ToList();
+            List<int> rankmmr = ((ICollection<int>)Enum.GetValues(typeof(Divisions))).ToList();
+            Dictionary<string, int> ranks = new Dictionary<string, int>();      
 
-            foreach (string item in Enum.GetNames(typeof(Divisions)))
-                ranksstr.Add(item);
-
-            foreach (int item in Enum.GetValues(typeof(Divisions)))
-                rankmmr.Add(item);
 
             for (int i = 0; i < ranksstr.Count; i++)
                 ranks.Add(ranksstr[i], rankmmr[i]);
@@ -99,20 +79,19 @@ namespace MMR_Teamcreator.Model.Streamers_Clash
 
         public string ToString(string format)
         {
-            switch(format)
+            if (IsCaptain)
+                return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.Role}\t{this.SecondaryRole}\t{this.CaptainBudget}";
+
+            switch (format)
             {
                 // Default
                 case "D":
                     {
-                        if (IsCaptain)
-                            return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.Role}\t{this.CaptainBudget}";
                         return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.Role}\t{this.PlayerCost}";
                     }
                 // Secondary
                 case "S":
                     {
-                        if (IsCaptain)
-                            return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.Role}\t{this.CaptainBudget}";
                         return $"{this.TwitchNick}\t{this.RankString}\t{this.IngameNick}\t{this.SecondaryRole}\t{this.PlayerCost}";
                     }
                 default:
