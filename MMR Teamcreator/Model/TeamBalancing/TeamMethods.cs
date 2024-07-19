@@ -121,30 +121,31 @@ namespace MMR_Teamcreator.Model
 
         int BiggestTeamMMRGap(List<Team> _teams) => _teams.Max(x => x.GetMMR()) - _teams.Min(x => x.GetMMR());
 
-        Tuple<int, int> IndexesOfTwoMostGappedTeams(List<Team> _teams)
+        Tuple<int, int> IndexesOfTwoMostGappedTeams(List<Team> teams)
         {
             int first = 0, second = 0;
 
-            Team num1 = _teams.OrderBy(x => x.GetMMR()).ToList()[0];
-            Team num2 = _teams.OrderBy(x => x.GetMMR()).ToList()[_teams.Count - 1];
+            Team num1 = teams.OrderBy(x => x.GetMMR()).ToList()[0];
+            Team num2 = teams.OrderBy(x => x.GetMMR()).ToList()[teams.Count - 1];
 
-            for (int i = 0; i < _teams.Count; i++)
+            for (int i = 0; i < teams.Count; i++)
             {
-                if (_teams[i] == num1)
+                if (teams[i] == num1)
                     first = i;
-                if (_teams[i] == num2)
+                if (teams[i] == num2)
                     second = i;
             }
 
             return new Tuple<int, int>(first, second);
         }
 
-        void SwapDiameterClosestPlayers(ref Team _team1, ref Team _team2, int avgRankMMR)
+        void SwapDiameterClosestPlayers(ref Team team1, ref Team _team2, int avgRankMMR)
         {
+            if (_team2 == null) throw new ArgumentNullException(nameof(_team2));
             Roles swapRole = Roles.Top;
             int endDiff = int.MaxValue;
 
-            int diff = _team1.Toplaner.GetMMR() - _team2.Toplaner.GetMMR();
+            int diff = team1.Toplaner.GetMMR() - _team2.Toplaner.GetMMR();
 
             //If diff > 0 = Weaker team has stronger player on lane
             if (diff < 0)
@@ -154,7 +155,7 @@ namespace MMR_Teamcreator.Model
                 endDiff = diff;
             }
 
-            diff = _team1.Jungler.GetMMR() - _team2.Jungler.GetMMR();
+            diff = team1.Jungler.GetMMR() - _team2.Jungler.GetMMR();
             if (diff < 0)
             {
                 diff *= -1;
@@ -166,7 +167,7 @@ namespace MMR_Teamcreator.Model
                 }
             }
 
-            diff = _team1.Midlaner.GetMMR() - _team2.Midlaner.GetMMR();
+            diff = team1.Midlaner.GetMMR() - _team2.Midlaner.GetMMR();
             if (diff < 0)
             {
                 diff *= -1;
@@ -178,7 +179,7 @@ namespace MMR_Teamcreator.Model
                 }
             }
 
-            diff = _team1.ADCarry.GetMMR() - _team2.ADCarry.GetMMR();
+            diff = team1.ADCarry.GetMMR() - _team2.ADCarry.GetMMR();
             if (diff < 0)
             {
                 diff *= -1;
@@ -190,7 +191,7 @@ namespace MMR_Teamcreator.Model
                 }
             }
 
-            diff = _team1.Support.GetMMR() - _team2.Support.GetMMR();
+            diff = team1.Support.GetMMR() - _team2.Support.GetMMR();
             if (diff < 0)
             {
                 diff *= -1;
@@ -203,15 +204,15 @@ namespace MMR_Teamcreator.Model
             }
 
             if (swapRole == Roles.Top)
-                Team.SwapTop(ref _team1, ref _team2);
+                Team.SwapTop(ref team1, ref _team2);
             else if (swapRole == Roles.Jungle)
-                Team.SwapJungle(ref _team1, ref _team2);
+                Team.SwapJungle(ref team1, ref _team2);
             else if (swapRole == Roles.Mid)
-                Team.SwapMidlane(ref _team1, ref _team2);
+                Team.SwapMidlane(ref team1, ref _team2);
             else if (swapRole == Roles.ADC)
-                Team.SwapADCarry(ref _team1, ref _team2);
-            else if (swapRole == Roles.Support)
-                Team.SwapSupport(ref _team1, ref _team2);
+                Team.SwapADCarry(ref team1, ref _team2);
+            else
+                Team.SwapSupport(ref team1, ref _team2);
         }
 
         string GetTeamMMRString(int mmr)

@@ -107,6 +107,7 @@ namespace MMR_Teamcreator.Model
                         minRes += -1;
 
                         minRes = avgRankInt - minRes;
+                        
                         if(minRes < currentDiff)
                         {
                             currentDiff = minRes;
@@ -117,36 +118,6 @@ namespace MMR_Teamcreator.Model
                 }
             }
             TeamLaneless.SwapPlayers(ref team1, ref team2, close1, close2);
-
-            /*int endDiff = int.MaxValue;
-            int index = 0;
-
-            int maxIndex = weaker.Players.Count - 1;
-
-            if (weaker.Players.Count != stronger.Players.Count)
-                maxIndex = (weaker.Players.Count > stronger.Players.Count) ? stronger.Players.Count - 1 : weaker.Players.Count - 1;
-
-            if(maxIndex == 0)
-            {
-                MessageBox.Show("Maximal index is 0. Invalid player count!", "ERROR", MessageBoxButton.OK);
-            }
-
-            for (int i = 0; i < maxIndex; i++)
-            {
-                int diff = weaker.Players[i].GetMMR() - stronger.Players[i].GetMMR();
-                if (diff < 0)
-                {
-                    diff *= -1;
-                    diff = avgRankInt - diff;
-                    if (diff < endDiff)
-                    {
-                        endDiff = diff;
-                        index = i;
-                    }
-                }
-            }
-
-            TeamLaneless.SwapPlayers(ref weaker, ref stronger, index, index);*/
         }
 
         void Save(List<TeamLaneless> teams, string path = "")
@@ -218,24 +189,18 @@ namespace MMR_Teamcreator.Model
 
         string GetTeamMMRString(int mmr)
         {
-            List<string> ranksstr = new List<string>();
-            List<int> rankmmr = new List<int>();
             Dictionary<int, string> ranks = new Dictionary<int, string>();
 
-            foreach (string item in Enum.GetNames(typeof(Divisions)))
-                ranksstr.Add(item);
+            List<string> ranksstr = Enum.GetNames(typeof(Divisions)).ToList();
 
-            foreach (int item in Enum.GetValues(typeof(Divisions)))
-                rankmmr.Add(item);
+            List<int> rankmmr = Enum.GetValues(typeof(Divisions)).Cast<int>().ToList();
 
             for (int i = 0; i < ranksstr.Count; i++)
                 ranks.Add(rankmmr[i], ranksstr[i]);
 
-            foreach (KeyValuePair<int, string> item in ranks)
+            foreach (var item in ranks.Where(item => mmr == item.Key))
             {
-                //int diff = mmr - item.Key;
-                if (mmr == item.Key)
-                    return item.Value;
+                return item.Value;
             }
             return "ERR_ERR";
         }
@@ -258,17 +223,14 @@ namespace MMR_Teamcreator.Model
 
             Dictionary<string, int> _pomDic = _ranks;
 
-            foreach (TeamLaneless item in teams)
+            foreach (var _player in teams.SelectMany(item => item.Players))
             {
-                foreach (PlayerLaneless _player in item.Players)
+                foreach (string key in _pomDic.Keys)
                 {
-                    foreach (string key in _pomDic.Keys)
+                    if (_player.Rank.ToString().Split('_')[0] == key)
                     {
-                        if (_player.Rank.ToString().Split('_')[0] == key)
-                        {
-                            _ranks[key] += 1;
-                            break;
-                        }
+                        _ranks[key] += 1;
+                        break;
                     }
                 }
             }

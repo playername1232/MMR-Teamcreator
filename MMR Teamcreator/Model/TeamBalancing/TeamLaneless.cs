@@ -11,7 +11,7 @@ namespace MMR_Teamcreator.Model
 {
     public class TeamLaneless
     {
-        public List<PlayerLaneless> Players { get; set; }
+        public List<PlayerLaneless> Players { get; }
 
         public TeamLaneless()
         {
@@ -29,11 +29,10 @@ namespace MMR_Teamcreator.Model
 
         public static void SwapPlayers(ref TeamLaneless team1, ref TeamLaneless team2, int index1, int index2)
         {
-            PlayerLaneless pomPlayer = team1.Players[index1];
-            team1.Players[index1] = team2.Players[index2];
-            team2.Players[index2] = pomPlayer;
+            (team1.Players[index1], team2.Players[index2]) = (team2.Players[index2], team1.Players[index1]);
+            
             Debug.WriteLine($"Swapping players: TEAM 1 player = Ingame {team1.Players[index1].IngameNick} RANK: {team1.Players[index1].Rank} Twitch: {team1.Players[index1].TwitchNick} with " +
-                $"TEAM 2 player = Ingame: {team2.Players[index2].IngameNick} RANK:{team2.Players[index2].Rank} Twitch: {team2.Players[index2].TwitchNick}");
+                            $"TEAM 2 player = Ingame: {team2.Players[index2].IngameNick} RANK:{team2.Players[index2].Rank} Twitch: {team2.Players[index2].TwitchNick}");
         }
     }
 }

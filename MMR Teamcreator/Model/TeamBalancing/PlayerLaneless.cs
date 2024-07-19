@@ -10,10 +10,10 @@ namespace MMR_Teamcreator.Model
     {
         private string _rankString;
         public string RankString => _rankString;
-        public string TwitchNick { get; protected set; }
-        public string IngameNick { get; protected set; }
+        public string TwitchNick { get; private set; }
+        public string IngameNick { get; private set; }
         private int MMR { get; set; }
-        public Divisions Rank { get; protected set; }
+        public Divisions Rank { get; private set; }
 
         public PlayerLaneless(string twitch, Divisions rank, string ingame)
         {
@@ -134,9 +134,7 @@ namespace MMR_Teamcreator.Model
             if (player1 is null || player2 is null)
                 return false;
 
-            if (player1.IngameNick != player2.IngameNick || player1.TwitchNick != player2.TwitchNick)
-                return true;
-            return false;
+            return player1.IngameNick != player2.IngameNick || player1.TwitchNick != player2.TwitchNick;
         }
 
         public override string ToString() => $"TW: {TwitchNick}  Rank: {_rankString}  Ingame: {IngameNick}";
@@ -145,9 +143,7 @@ namespace MMR_Teamcreator.Model
 
         public override bool Equals(object obj)
         {
-            if (this == (obj as PlayerLaneless))
-                return true;
-            return false;
+            return this == (obj as PlayerLaneless);
         }
     }
 }

@@ -15,11 +15,11 @@ namespace MMR_Teamcreator.Model
         /// pos[3] = Adc
         /// pos[4] = Support
         /// </summary>
-        public Player Toplaner { get; set; }
-        public Player Jungler { get; set; }
-        public Player Midlaner { get; set; }
-        public Player ADCarry { get; set; }
-        public Player Support { get; set; }
+        public Player Toplaner { get; private set; }
+        public Player Jungler { get; private set; }
+        public Player Midlaner { get; private set; }
+        public Player ADCarry { get; private set; }
+        public Player Support { get; private set; }
 
         public Team()
         {
@@ -58,33 +58,23 @@ namespace MMR_Teamcreator.Model
 
         public static void SwapTop(ref Team _team1, ref Team _team2)
         {
-            Player pomPlay = _team1.Toplaner;
-            _team1.Toplaner = _team2.Toplaner;
-            _team2.Toplaner = pomPlay;
+            (_team1.Toplaner, _team2.Toplaner) = (_team2.Toplaner, _team1.Toplaner);
         }
         public static void SwapJungle(ref Team _team1, ref Team _team2)
         {
-            Player pomPlay = _team1.Jungler;
-            _team1.Jungler = _team2.Jungler;
-            _team2.Jungler = pomPlay;
+            (_team1.Jungler, _team2.Jungler) = (_team2.Jungler, _team1.Jungler);
         }
         public static void SwapMidlane(ref Team _team1, ref Team _team2)
         {
-            Player pomPlay = _team1.Midlaner;
-            _team1.Midlaner = _team2.Midlaner;
-            _team2.Midlaner = pomPlay;
+            (_team1.Midlaner, _team2.Midlaner) = (_team2.Midlaner, _team1.Midlaner);
         }
         public static void SwapADCarry(ref Team _team1, ref Team _team2)
         {
-            Player pomPlay = _team1.ADCarry;
-            _team1.ADCarry = _team2.ADCarry;
-            _team2.ADCarry = pomPlay;
+            (_team1.ADCarry, _team2.ADCarry) = (_team2.ADCarry, _team1.ADCarry);
         }
         public static void SwapSupport(ref Team _team1, ref Team _team2)
         {
-            Player pomPlay = _team1.Support;
-            _team1.Support = _team2.Support;
-            _team2.Support = pomPlay;
+            (_team1.Support, _team2.Support) = (_team2.Support, _team1.Support);
         }
 
         public override string ToString()
