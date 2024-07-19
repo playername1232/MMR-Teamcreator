@@ -248,6 +248,7 @@ namespace MMR_Teamcreator.Model
                 { "Grandmaster", 0 },
                 { "Master", 0 },
                 { "Diamond", 0 },
+                { "Emerald", 0 },
                 { "Platinum", 0 },
                 { "Gold", 0 },
                 { "Silver", 0 },
