@@ -20,11 +20,11 @@ namespace MMR_Teamcreator.Model
     {
         private string _rankString;
         public string RankString => _rankString;
-        public string TwitchNick { get; protected set; }
-        public string IngameNick { get; protected set; }
+        public string TwitchNick { get; private set; }
+        public string IngameNick { get; private set; }
         private int MMR { get; set; }
         public Roles Role { get; protected set; }
-        public Divisions Rank { get; protected set; }
+        public Divisions Rank { get; private set; }
 
         public Player(Roles role, string twitch, Divisions rank, string ingame)
         {

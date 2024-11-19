@@ -66,6 +66,23 @@ namespace MMR_Teamcreator
 
             StreamerResult = new StreamersClashResult();
             #endregion
+
+            int[] range = (int[])Enumerable.Range(0, 200);
+            int[] even = new int[200];
+            int evenIdx = 0;
+            for(int i = 0; i < range.Length; i++)
+            {
+                if (range[i] % 2 == 0)
+                {
+                    even[evenIdx++] = range[i];
+                }
+            }
+
+            range.ToList().ForEach(x =>
+            {
+                if (x % 2 == 0)
+                    even[evenIdx++] = x;
+            });
         }
 
         /// <summary>
