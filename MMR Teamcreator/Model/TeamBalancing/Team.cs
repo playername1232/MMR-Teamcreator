@@ -56,36 +56,11 @@ namespace MMR_Teamcreator.Model
             return (Toplaner.GetMMR() + Jungler.GetMMR() + Midlaner.GetMMR() + ADCarry.GetMMR() + Support.GetMMR()) / 5;
         }
 
-        public static void SwapTop(ref Team _team1, ref Team _team2)
-        {
-            Player pomPlay = _team1.Toplaner;
-            _team1.Toplaner = _team2.Toplaner;
-            _team2.Toplaner = pomPlay;
-        }
-        public static void SwapJungle(ref Team _team1, ref Team _team2)
-        {
-            Player pomPlay = _team1.Jungler;
-            _team1.Jungler = _team2.Jungler;
-            _team2.Jungler = pomPlay;
-        }
-        public static void SwapMidlane(ref Team _team1, ref Team _team2)
-        {
-            Player pomPlay = _team1.Midlaner;
-            _team1.Midlaner = _team2.Midlaner;
-            _team2.Midlaner = pomPlay;
-        }
-        public static void SwapADCarry(ref Team _team1, ref Team _team2)
-        {
-            Player pomPlay = _team1.ADCarry;
-            _team1.ADCarry = _team2.ADCarry;
-            _team2.ADCarry = pomPlay;
-        }
-        public static void SwapSupport(ref Team _team1, ref Team _team2)
-        {
-            Player pomPlay = _team1.Support;
-            _team1.Support = _team2.Support;
-            _team2.Support = pomPlay;
-        }
+        public static void SwapTop(ref Team team1, ref Team team2) => (team1.Toplaner, team2.Toplaner) = (team2.Toplaner, team1.Toplaner);
+        public static void SwapJungle(ref Team team1, ref Team team2) => (team1.Jungler, team2.Jungler) = (team2.Jungler, team1.Jungler);
+        public static void SwapMidlane(ref Team team1, ref Team team2) => (team1.Midlaner, team2.Midlaner) = (team2.Midlaner, team1.Midlaner);
+        public static void SwapADCarry(ref Team team1, ref Team team2) => (team1.ADCarry, team2.ADCarry) = (team2.ADCarry, team1.ADCarry);
+        public static void SwapSupport(ref Team team1, ref Team team2) => (team1.Support, team2.Support) = (team2.Support, team1.Support);
 
         public override string ToString()
         {

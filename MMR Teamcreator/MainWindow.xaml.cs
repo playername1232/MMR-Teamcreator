@@ -204,7 +204,7 @@ namespace MMR_Teamcreator
                 return;
             }
 
-            TeamMethods.BalanceTeams(topList, jungleList, midList, adcList, supportList, randomPlayers, true);
+            TeamMethods.BalanceTeams(ref topList, ref jungleList, ref midList, ref adcList, ref supportList, randomPlayers, true);
 
             string path = ExportFilePath = $@"{DirectoryMethods.RemovePathPart(Environment.CurrentDirectory, 3)}\RFPExcelAPI\RawPlayerDataExport.txt";
 
@@ -238,7 +238,7 @@ namespace MMR_Teamcreator
                 return;
             }
 
-            TeamLanelessMethods.BalanceTeams(lanelessList, randomPlayers);
+            TeamLanelessMethods.BalanceTeams(ref lanelessList, randomPlayers);
         }
 
 

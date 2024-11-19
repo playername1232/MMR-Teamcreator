@@ -29,33 +29,31 @@ namespace MMR_Teamcreator.Model
         public Player(Roles role, string twitch, Divisions rank, string ingame)
         {
             Role = role;
-            TwitchNick = twitch.TrimEnd(' ');
-            _rankString = $"{rank.ToString().ToUpper()[0]}{rank.ToString().Split('_')[1][0]}";
             Rank = rank;
-            List<string> ranksstr = new List<string>();
-            List<int> rankmmr = new List<int>();
-            Dictionary<string, int> ranks = new Dictionary<string, int>();
-
-            foreach(string item in Enum.GetNames(typeof(Divisions)))
-                ranksstr.Add(item);
-
-            foreach (int item in Enum.GetValues(typeof(Divisions)))
-                rankmmr.Add(item);
-
-            for (int i = 0; i < ranksstr.Count; i++)
-                ranks.Add(ranksstr[i], rankmmr[i]);
-
-            foreach(KeyValuePair<string, int> item in ranks)
-            {
-                char item_0 = item.Key.ToCharArray()[0];
-                char item_1 = item.Key.Split('_')[1].ToCharArray()[0];
-
-                if ($"{item_0}{item_1}" == $"{rank.ToString()[0]}{rank.ToString().Split('_')[1][0]}")
-                    MMR = Convert.ToInt32(ranks[item.Key]);
-            }
-
+            
             IngameNick = ingame.TrimEnd(' ');
             TwitchNick = twitch.TrimEnd(' ');
+            
+            _rankString = $"{rank.ToString().ToUpper()[0]}{rank.ToString().Split('_')[1][0]}";
+            
+            List<string> _rankListStr = new List<string>();
+            List<int> _rankListInt = new List<int>();
+
+            _rankListStr = Enum.GetNames(typeof(Divisions)).ToList();
+
+            foreach (int _value in Enum.GetValues(typeof(Divisions)))
+                _rankListInt.Add(_value);
+
+            for (int i = 0; i < _rankListStr.Count; i++)
+            {
+                string tempListRank = $"{_rankListStr[i][0]}{_rankListStr[i].Split('_')[1]}";
+                string tempCurrentRank = rank.ToString();
+
+                if (tempListRank == $"{tempCurrentRank[0]}{tempCurrentRank.Split('_')[1]}")
+                    MMR = _rankListInt[i];
+            } 
+
+            _rankString = $"{rank.ToString().ToUpper()[0]}{rank.ToString().Split('_')[1][0]}";
         }
         public Player(string role, string twitch, string rank, string ingame)
         {
@@ -74,7 +72,7 @@ namespace MMR_Teamcreator.Model
                 Divisions.Emerald_4, Divisions.Emerald_3, Divisions.Emerald_2, Divisions.Emerald_1,
                 Divisions.Diamond_4, Divisions.Diamond_3, Divisions.Diamond_2, Divisions.Diamond_1,
                 Divisions.Master_A, Divisions.Grandmaster_M, Divisions.Challenger_H
-            };
+            };  
             for(int i = 0; i < _roles.Count; i++)
             {
                 if(role.ToUpper() == _roles[i].ToString().ToUpper())
@@ -116,7 +114,6 @@ namespace MMR_Teamcreator.Model
             Rank = rank;
             List<string> _rankListStr = new List<string>();
             List<int> _rankListInt = new List<int>();
-            Dictionary<string, int> ranks = new Dictionary<string, int>();
 
             _rankListStr = Enum.GetNames(typeof(Divisions)).ToList();
 
@@ -124,16 +121,13 @@ namespace MMR_Teamcreator.Model
                 _rankListInt.Add(_value);
 
             for (int i = 0; i < _rankListStr.Count; i++)
-                ranks.Add(_rankListStr[i], _rankListInt[i]);
-
-            foreach (KeyValuePair<string, int> item in ranks)
             {
-                char item_0 = item.Key.ToCharArray()[0];
-                char item_1 = item.Key.Split('_')[1].ToCharArray()[0];
+                string tempListRank = $"{_rankListStr[i][0]}{_rankListStr[i].Split('_')[1]}";
+                string tempCurrentRank = rank.ToString();
 
-                if ($"{item_0}{item_1}" == $"{rank.ToString()[0]}{rank.ToString().Split('_')[1][0]}")
-                    MMR = Convert.ToInt32(ranks[item.Key]);
-            }
+                if (tempListRank == $"{tempCurrentRank[0]}{tempCurrentRank.Split('_')[1]}")
+                    MMR = _rankListInt[i];
+            } 
 
             _rankString = $"{rank.ToString().ToUpper()[0]}{rank.ToString().Split('_')[1][0]}";
         }
@@ -165,11 +159,6 @@ namespace MMR_Teamcreator.Model
 
         public override int GetHashCode() => this.TwitchNick.GetHashCode();
 
-        public override bool Equals(object obj)
-        {
-            if (this == (obj as Player)) 
-                return true;
-            return false;
-        }
+        public override bool Equals(object obj) => this == (obj as Player);
     } 
 }

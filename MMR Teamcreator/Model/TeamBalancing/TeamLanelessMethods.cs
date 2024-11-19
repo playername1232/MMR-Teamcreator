@@ -19,19 +19,19 @@ namespace MMR_Teamcreator.Model
 {
     public class TeamLanelessMethods
     {
-        public static List<TeamLaneless> BalanceTeams(List<PlayerLaneless> players, bool createRandomPlayers)
+        public static List<TeamLaneless> BalanceTeams(ref List<PlayerLaneless> players, bool createRandomPlayers)
         {
             TeamLanelessMethods methods = new TeamLanelessMethods();
             if (createRandomPlayers)
                 methods.CreatePlayers(ref players);
 
-            return methods.InnerTeamBalance(players);
+            return methods.InnerTeamBalance(ref players);
         }
 
         public TeamLanelessMethods()
         {/* YEET */}
 
-        private List<TeamLaneless> InnerTeamBalance(List<PlayerLaneless> players)
+        private List<TeamLaneless> InnerTeamBalance(ref List<PlayerLaneless> players)
         {
             List<TeamLaneless> teams = new List<TeamLaneless>();
 
@@ -48,13 +48,13 @@ namespace MMR_Teamcreator.Model
                     teams[i].Players.Add(players[playerIndex]);
             }
 
-            teams = SortTeamsByMMR(teams);
+            SortTeamsByMMR(ref teams);
 
             int process = 0;
 
-            while(BiggestTeamMMRGap(teams) > 2 && process != 250)
+            while(BiggestTeamMMRGap(ref teams) > 2 && process != 250)
             {
-                Tuple<int, int> indexes = IndexesOfTwoMostGappedTeams(teams);
+                Tuple<int, int> indexes = IndexesOfTwoMostGappedTeams(ref teams);
                 TeamLaneless team1 = teams[indexes.Item1];
                 TeamLaneless team2 = teams[indexes.Item2];
                 SwapDiameterClosestPlayers(ref team1, ref team2, avgMmr);
@@ -63,16 +63,16 @@ namespace MMR_Teamcreator.Model
                 process += 1;
             }
 
-            Save(teams);
+            Save(ref teams);
 
             return teams;
         }
 
-        List<TeamLaneless> SortTeamsByMMR(List<TeamLaneless> teams) => teams.OrderBy(x => x.GetTeamMMR()).ToList();
+        void SortTeamsByMMR(ref List<TeamLaneless> teams) => teams = teams.OrderBy(x => x.GetTeamMMR()).ToList();
 
-        int BiggestTeamMMRGap(List<TeamLaneless> teams) => teams.Max(x => x.GetTeamMMR()) - teams.Min(x => x.GetTeamMMR());
+        int BiggestTeamMMRGap(ref List<TeamLaneless> teams) => teams.Max(x => x.GetTeamMMR()) - teams.Min(x => x.GetTeamMMR());
 
-        Tuple<int, int> IndexesOfTwoMostGappedTeams(List<TeamLaneless> teams)
+        Tuple<int, int> IndexesOfTwoMostGappedTeams(ref List<TeamLaneless> teams)
         {
             int first = 0, second = 0;
 
@@ -117,39 +117,9 @@ namespace MMR_Teamcreator.Model
                 }
             }
             TeamLaneless.SwapPlayers(ref team1, ref team2, close1, close2);
-
-            /*int endDiff = int.MaxValue;
-            int index = 0;
-
-            int maxIndex = weaker.Players.Count - 1;
-
-            if (weaker.Players.Count != stronger.Players.Count)
-                maxIndex = (weaker.Players.Count > stronger.Players.Count) ? stronger.Players.Count - 1 : weaker.Players.Count - 1;
-
-            if(maxIndex == 0)
-            {
-                MessageBox.Show("Maximal index is 0. Invalid player count!", "ERROR", MessageBoxButton.OK);
-            }
-
-            for (int i = 0; i < maxIndex; i++)
-            {
-                int diff = weaker.Players[i].GetMMR() - stronger.Players[i].GetMMR();
-                if (diff < 0)
-                {
-                    diff *= -1;
-                    diff = avgRankInt - diff;
-                    if (diff < endDiff)
-                    {
-                        endDiff = diff;
-                        index = i;
-                    }
-                }
-            }
-
-            TeamLaneless.SwapPlayers(ref weaker, ref stronger, index, index);*/
         }
 
-        void Save(List<TeamLaneless> teams, string path = "")
+        void Save(ref List<TeamLaneless> teams, string path = "")
         {
             if (path == "")
                 path = $@"{Environment.CurrentDirectory}\ClassicTeams\output.txt";
@@ -186,8 +156,8 @@ namespace MMR_Teamcreator.Model
 
                 sw.WriteLine("\n...............................Počet ranků................................");
 
-                Dictionary<string, int> _ranksCount = RanksCount(teams);
-                foreach (KeyValuePair<string, int> item in _ranksCount)
+                Dictionary<string, int> ranksCount = RanksCount(teams);
+                foreach (KeyValuePair<string, int> item in ranksCount)
                     sw.WriteLine($"{item.Key}: {item.Value}");
 
                 sw.WriteLine("...........................................................................");
@@ -220,7 +190,6 @@ namespace MMR_Teamcreator.Model
         {
             List<string> ranksstr = new List<string>();
             List<int> rankmmr = new List<int>();
-            Dictionary<int, string> ranks = new Dictionary<int, string>();
 
             foreach (string item in Enum.GetNames(typeof(Divisions)))
                 ranksstr.Add(item);
@@ -228,21 +197,18 @@ namespace MMR_Teamcreator.Model
             foreach (int item in Enum.GetValues(typeof(Divisions)))
                 rankmmr.Add(item);
 
-            for (int i = 0; i < ranksstr.Count; i++)
-                ranks.Add(rankmmr[i], ranksstr[i]);
-
-            foreach (KeyValuePair<int, string> item in ranks)
+            for (int i = 0; i < rankmmr.Count; i++)
             {
-                //int diff = mmr - item.Key;
-                if (mmr == item.Key)
-                    return item.Value;
+                if (mmr == rankmmr[i])
+                    return ranksstr[i];
             }
+            
             return "ERR_ERR";
         }
 
         private static Dictionary<string, int> RanksCount(List<TeamLaneless> teams)
         {
-            Dictionary<string, int> _ranks = new Dictionary<string, int>
+            Dictionary<string, int> ranks = new Dictionary<string, int>
             {
                 { "Challenger", 0 },
                 { "Grandmaster", 0 },
@@ -255,23 +221,23 @@ namespace MMR_Teamcreator.Model
                 { "Iron", 0 }
             };
 
-            Dictionary<string, int> _pomDic = _ranks;
+            Dictionary<string, int> pomDic = ranks;
 
             foreach (TeamLaneless item in teams)
             {
-                foreach (PlayerLaneless _player in item.Players)
+                foreach (PlayerLaneless player in item.Players)
                 {
-                    foreach (string key in _pomDic.Keys)
+                    foreach (string key in pomDic.Keys)
                     {
-                        if (_player.Rank.ToString().Split('_')[0] == key)
+                        if (player.Rank.ToString().Split('_')[0] == key)
                         {
-                            _ranks[key] += 1;
+                            ranks[key] += 1;
                             break;
                         }
                     }
                 }
             }
-            return _pomDic;
+            return pomDic;
         }
 
         private void CreatePlayers(ref List<PlayerLaneless> players)

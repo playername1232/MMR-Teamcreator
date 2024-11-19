@@ -12,7 +12,10 @@ namespace MMR_Teamcreator.Model
 {
     public class TeamMethods
     {
-        public static List<Team> BalanceTeams(List<Player> topList, List<Player> jungleList, List<Player> midList, List<Player> adcList, List<Player> supportList, bool createRandomPlayers = false, bool save = false)
+        public static List<Team> BalanceTeams(ref List<Player> topList, ref List<Player> jungleList, 
+                                              ref List<Player> midList, ref List<Player> adcList, 
+                                              ref List<Player> supportList,
+            bool createRandomPlayers = false, bool save = false)
         {
             TeamMethods xd = new TeamMethods();
 
@@ -42,7 +45,7 @@ namespace MMR_Teamcreator.Model
         #region TeamBalancing
         private List<Team> InnerTeamBalance(List<Player> topList, List<Player> jungleList, List<Player> midList, List<Player> adcList, List<Player> suppList, bool save = false)
         {
-            List<Team> _teamList = new List<Team>();
+            List<Team> teamList = new List<Team>();
 
             int topAvg = GetTeamMMR(topList),
                 jgAvg = GetTeamMMR(jungleList),
@@ -53,38 +56,38 @@ namespace MMR_Teamcreator.Model
             int avgOverall = (topAvg + jgAvg + midAvg + adcAvg + SuppAvg) / 5;
 
             for (int i = 0; i < 16; i++)
-                _teamList.Add(new Team(topList[i], jungleList[i], midList[i], adcList[i], suppList[i]));
+                teamList.Add(new Team(topList[i], jungleList[i], midList[i], adcList[i], suppList[i]));
 
-            _teamList = SortTeamsByMMR(_teamList);
+            SortTeamsByMMR(ref teamList);
 
             int process = 0;
 
-            while (BiggestTeamMMRGap(_teamList) > 2 && process != 250)
+            while (BiggestTeamMMRGap(teamList) > 2 && process != 250)
             {
-                Tuple<int, int> indexes = IndexesOfTwoMostGappedTeams(_teamList);
-                Team _team1 = _teamList[indexes.Item1];
-                Team _team2 = _teamList[indexes.Item2];
-                SwapDiameterClosestPlayers(ref _team1, ref _team2, avgOverall);
-                _teamList[indexes.Item1] = _team1;
-                _teamList[indexes.Item2] = _team2;
+                Tuple<int, int> indexes = IndexesOfTwoMostGappedTeams(teamList);
+                Team team1 = teamList[indexes.Item1];
+                Team team2 = teamList[indexes.Item2];
+                SwapDiameterClosestPlayers(ref team1, ref team2, avgOverall);
+                teamList[indexes.Item1] = team1;
+                teamList[indexes.Item2] = team2;
 
                 process++;
             }
 
             if (save)
-                Save(_teamList);
+                Save(teamList);
 
-            ExportToExcelJSON(_teamList);
+            ExportToExcelJSON(teamList);
 
-            return _teamList;
+            return teamList;
         }
         #endregion
 
-        List<Team> SortTeamsByMMR(List<Team> _teams) => _teams.OrderBy(x => x.GetMMR()).ToList();
+        void SortTeamsByMMR(ref List<Team> teams) => teams = teams.OrderBy(x => x.GetMMR()).ToList();
 
-        private static Dictionary<string, int> RanksCount(List<Team> _teams)
+        private static Dictionary<string, int> RanksCount(ref List<Team> teams)
         {
-            Dictionary<string, int> _ranks = new Dictionary<string, int>
+            Dictionary<string, int> ranks = new Dictionary<string, int>
             {
                 { "Challenger", 0 },
                 { "Grandmaster", 0 },
@@ -97,53 +100,53 @@ namespace MMR_Teamcreator.Model
                 { "Iron", 0 }
             };
 
-            Dictionary<string, int> _pomDic = _ranks;
+            Dictionary<string, int> pomDic = ranks;
             
-            _teams.ForEach(team =>
+            teams.ForEach(team =>
             {
                 new List<Player>() { team.Toplaner, team.Jungler, team.Midlaner, team.ADCarry, team.Support }.ForEach(
                     player =>
                     {
-                        foreach (string key in _pomDic.Keys)
+                        foreach (string key in pomDic.Keys)
                         {
                             if (player.Rank.ToString().Split('_')[0] == key)
                             {
-                                _ranks[key] += 1;
+                                ranks[key] += 1;
                                 break;
                             }
                         }
                     });
             });
             
-            return _pomDic;
+            return pomDic;
         }
 
-        int BiggestTeamMMRGap(List<Team> _teams) => _teams.Max(x => x.GetMMR()) - _teams.Min(x => x.GetMMR());
+        int BiggestTeamMMRGap(List<Team> teams) => teams.Max(x => x.GetMMR()) - teams.Min(x => x.GetMMR());
 
-        Tuple<int, int> IndexesOfTwoMostGappedTeams(List<Team> _teams)
+        Tuple<int, int> IndexesOfTwoMostGappedTeams(List<Team> teams)
         {
             int first = 0, second = 0;
 
-            Team num1 = _teams.OrderBy(x => x.GetMMR()).ToList()[0];
-            Team num2 = _teams.OrderBy(x => x.GetMMR()).ToList()[_teams.Count - 1];
+            Team num1 = teams.OrderBy(x => x.GetMMR()).ToList()[0];
+            Team num2 = teams.OrderBy(x => x.GetMMR()).ToList()[teams.Count - 1];
 
-            for (int i = 0; i < _teams.Count; i++)
+            for (int i = 0; i < teams.Count; i++)
             {
-                if (_teams[i] == num1)
+                if (teams[i] == num1)
                     first = i;
-                if (_teams[i] == num2)
+                if (teams[i] == num2)
                     second = i;
             }
 
             return new Tuple<int, int>(first, second);
         }
 
-        void SwapDiameterClosestPlayers(ref Team _team1, ref Team _team2, int avgRankMMR)
+        void SwapDiameterClosestPlayers(ref Team team1, ref Team team2, int avgRankMMR)
         {
             Roles swapRole = Roles.Top;
             int endDiff = int.MaxValue;
 
-            int diff = _team1.Toplaner.GetMMR() - _team2.Toplaner.GetMMR();
+            int diff = team1.Toplaner.GetMMR() - team2.Toplaner.GetMMR();
 
             //If diff > 0 = Weaker team has stronger player on lane
             if (diff < 0)
@@ -153,7 +156,7 @@ namespace MMR_Teamcreator.Model
                 endDiff = diff;
             }
 
-            diff = _team1.Jungler.GetMMR() - _team2.Jungler.GetMMR();
+            diff = team1.Jungler.GetMMR() - team2.Jungler.GetMMR();
             if (diff < 0)
             {
                 diff *= -1;
@@ -165,7 +168,7 @@ namespace MMR_Teamcreator.Model
                 }
             }
 
-            diff = _team1.Midlaner.GetMMR() - _team2.Midlaner.GetMMR();
+            diff = team1.Midlaner.GetMMR() - team2.Midlaner.GetMMR();
             if (diff < 0)
             {
                 diff *= -1;
@@ -177,7 +180,7 @@ namespace MMR_Teamcreator.Model
                 }
             }
 
-            diff = _team1.ADCarry.GetMMR() - _team2.ADCarry.GetMMR();
+            diff = team1.ADCarry.GetMMR() - team2.ADCarry.GetMMR();
             if (diff < 0)
             {
                 diff *= -1;
@@ -189,7 +192,7 @@ namespace MMR_Teamcreator.Model
                 }
             }
 
-            diff = _team1.Support.GetMMR() - _team2.Support.GetMMR();
+            diff = team1.Support.GetMMR() - team2.Support.GetMMR();
             if (diff < 0)
             {
                 diff *= -1;
@@ -202,22 +205,21 @@ namespace MMR_Teamcreator.Model
             }
 
             if (swapRole == Roles.Top)
-                Team.SwapTop(ref _team1, ref _team2);
+                Team.SwapTop(ref team1, ref team2);
             else if (swapRole == Roles.Jungle)
-                Team.SwapJungle(ref _team1, ref _team2);
+                Team.SwapJungle(ref team1, ref team2);
             else if (swapRole == Roles.Mid)
-                Team.SwapMidlane(ref _team1, ref _team2);
+                Team.SwapMidlane(ref team1, ref team2);
             else if (swapRole == Roles.ADC)
-                Team.SwapADCarry(ref _team1, ref _team2);
-            else if (swapRole == Roles.Support)
-                Team.SwapSupport(ref _team1, ref _team2);
+                Team.SwapADCarry(ref team1, ref team2);
+            else
+                Team.SwapSupport(ref team1, ref team2);
         }
 
         string GetTeamMMRString(int mmr)
         {
             List<string> ranksstr = new List<string>();
             List<int> rankmmr = new List<int>();
-            Dictionary<int, string> ranks = new Dictionary<int, string>();
 
             foreach (string item in Enum.GetNames(typeof(Divisions)))
                 ranksstr.Add(item);
@@ -225,15 +227,12 @@ namespace MMR_Teamcreator.Model
             foreach (int item in Enum.GetValues(typeof(Divisions)))
                 rankmmr.Add(item);
 
-            for (int i = 0; i < ranksstr.Count; i++)
-                ranks.Add(rankmmr[i], ranksstr[i]);
-
-            foreach (KeyValuePair<int, string> item in ranks)
+            for (int i = 0; i < rankmmr.Count; i++)
             {
-                //int diff = mmr - item.Key;
-                if (mmr == item.Key)
-                    return item.Value;
+                if (mmr == rankmmr[i])
+                    return ranksstr[i];
             }
+            
             return "ERR_ERR";
         }
 
@@ -253,14 +252,14 @@ namespace MMR_Teamcreator.Model
             return 0;
         }
 
-        void Save(List<Team> _teams)
+        void Save(List<Team> teams)
         {
             StreamWriter sw = new StreamWriter($@"{System.Environment.CurrentDirectory}\teamy.txt", false);
             try
             {
-                for (int i = 0; i < _teams.Count; i++)
+                for (int i = 0; i < teams.Count; i++)
                 {
-                    List<Player> pomList = new List<Player>() { _teams[i].Toplaner, _teams[i].Jungler, _teams[i].Midlaner, _teams[i].ADCarry, _teams[i].Support };
+                    List<Player> pomList = new List<Player>() { teams[i].Toplaner, teams[i].Jungler, teams[i].Midlaner, teams[i].ADCarry, teams[i].Support };
                     string rankstr = GetTeamMMRString(GetTeamMMR(pomList)).Replace('_', ' ');
                     sw.WriteLine($"Team číslo {i + 1} ... Team MMR : {GetTeamMMR(pomList)} - Rank : {rankstr}");
 
@@ -272,18 +271,18 @@ namespace MMR_Teamcreator.Model
                 }
 
                 int avgTeamMmr = 0; 
-                _teams.ForEach(x => avgTeamMmr += x.GetMMR());
+                teams.ForEach(x => avgTeamMmr += x.GetMMR());
                 string avgTeamRank = GetTeamMMRString(Convert.ToInt32(Math.Floor((decimal)avgTeamMmr / 16)));
 
-                sw.Write($"Počet teamů: {_teams.Count}\nPočet hráčů: {_teams.Count * 5}" +
+                sw.Write($"Počet teamů: {teams.Count}\nPočet hráčů: {teams.Count * 5}" +
                     $"\nPrůměrný mmr teamů: {Math.Floor((decimal)avgTeamMmr / 16)}" +
                     $"\nPrůměrný rank teamů: {avgTeamRank.Replace('_', ' ')}");
 
-                Dictionary<string, int> _ranksCount = RanksCount(_teams);
+                Dictionary<string, int> ranksCount = RanksCount(ref teams);
 
                 sw.WriteLine("\n...............................Počet ranků................................");
 
-                foreach (KeyValuePair<string, int> item in _ranksCount)
+                foreach (KeyValuePair<string, int> item in ranksCount)
                     sw.WriteLine($"{item.Key}: {item.Value}");
 
                 sw.WriteLine("...........................................................................");
@@ -300,7 +299,7 @@ namespace MMR_Teamcreator.Model
             }
         }
 
-        void ExportToExcelJSON(List<Team> _teams)
+        void ExportToExcelJSON(List<Team> teams)
         {
             string exportDir = $@"{Environment.CurrentDirectory}\RFPExcelAPI";
 
@@ -311,8 +310,8 @@ namespace MMR_Teamcreator.Model
             StreamWriter sw = new StreamWriter($@"{exportDir}\RawPlayerDataExport.txt", false, Encoding.UTF8);
             try
             {
-                _teams.ForEach(item => new List<Player>() { item.Toplaner, item.Jungler, item.Midlaner, item.ADCarry, item.Support }
-                    .ForEach(_innerItem => sw.WriteLine($"{_innerItem.IngameNick}:{_innerItem.RankString}:{_innerItem.TwitchNick}")));
+                teams.ForEach(item => new List<Player>() { item.Toplaner, item.Jungler, item.Midlaner, item.ADCarry, item.Support }
+                    .ForEach(innerItem => sw.WriteLine($"{innerItem.IngameNick}:{innerItem.RankString}:{innerItem.TwitchNick}")));
             }
             catch (Exception e)
             {
