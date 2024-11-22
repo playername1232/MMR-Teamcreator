@@ -67,7 +67,7 @@ namespace MMR_Teamcreator
             StreamerResult = new StreamersClashResult();
             #endregion
 
-            int[] range = (int[])Enumerable.Range(0, 200);
+            int[] range = Enumerable.Range(0, 200).ToArray();
             int[] even = new int[200];
             int evenIdx = 0;
             for(int i = 0; i < range.Length; i++)
@@ -217,7 +217,7 @@ namespace MMR_Teamcreator
 
             if((count = (topList.Count + jungleList.Count + midList.Count + adcList.Count + supportList.Count)) %5 != 0 && randomPlayers == false)
             {
-                MessageBox.Show($"Not all roles were fullfilled!\nActual player count: {count}");
+                MessageBox.Show($"Not all roles were fulfilled!\nActual player count: {count}");
                 return;
             }
 
