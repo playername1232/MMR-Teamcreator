@@ -1,7 +1,8 @@
-www.twitch.tv/freezecz;Freeze#Euw1;ADC;Mid;MA
-https://twitch.tv/herdyn;Herdyn;Top;Top;G2
-https://twitch.tv/xnapycz;xnapy#main;Mid;Jungle;D1
-https://www.twitch.tv/tensterakdary/;Sterakdary#EUNE;Support;Top;B3
-https://www.twitch.tv/kokiii_;Haerın #EUNE;ADC;Support;D3
-youtube.com/robdiesalot/live;RobDiesALot#1337;Support;Support;B2
-twitch.tv/spajKK;spajkk#eune;Support;Support;B3
+freezecz;Freeze#Euw;ADC;Mid;MA
+herdyn;Herdyn#EUW;Top;Top;P3
+xnapycz;xnapy#main;Mid;Jungle;D2
+tensterakdary;Sterakdary#EUNE;Support;Top;B3
+kokiii_;Haerın #EUNE;ADC;Support;D4
+robdiesalot;RobDiesALot#1337;Support;Support;B4
+spajKK;spajkk#eune;Support;Support;B4
+necrit94;Necrit#EUW;Support;Mid;G4

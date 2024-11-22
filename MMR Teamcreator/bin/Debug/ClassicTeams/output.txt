@@ -1,71 +1,128 @@
-Team číslo 1 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
-mdot13	G1	mdot13
-last choice	G1	nefer77
-Fllo0oPs	G1	fllo0ops
-LOST IN KRALOVEC	G1	machec88
-50Shadesofban	G1	50Shadesofbann
+Team číslo 1 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+Tums Du Couteau	P1	ShadowTums
+GejusBigusDikus	G3	primaen
+Adelinee	P3	Adelinn
+MoraviaKnight	G4	moraviaknight
+Fitness Man	G4	miprakojad
 ..........................................................................
-Team číslo 2 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
-Xardasar	G1	Cokoladovytunik
-Lukasch2	G1	lukys____
-Mára Brzda	G1	vocasos
-I AM JONAS	G1	dzouunas
-Slothy Hannz	G1	HanzzCZ
+Team číslo 2 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+50ShadesOfBan	D2	50shadesofbann
+Ådonys	I1	adonys_s
+AprilFergus	G1	dWolf_J
+seamor2365	G2	seamor_
+xXI carry himXx	G1	whoisanonym
 ..........................................................................
-Team číslo 3 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
-Zuziikk	G1	zuziinka1
-farm till I die	G1	zezak15
-WAS Korty	G1	korty12
-TTV MattOnTopp	G1	MattOnTop
-comake8	G1	kuririn8
+Team číslo 3 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+vojtaCern	G1	AmigoMarek
+Kokor Kubík	P2	norty1441
+Petross01	G1	Petross
+rRumcajs	G3	Rotarko
+kubises	G4	turbomys1
 ..........................................................................
 Team číslo 4 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
-ßucháč	G1	suchac_
-ValdezLul	G1	valdez_lul
-Dead in 1sec	G1	Thomass616
-Zázrak z Moravy	G1	tzavadil
-Erunayo	G1	erunayolove
+Drobcik	G2	Drobcik
+Youdaaa Kun	D3	Youdaaa_
+Pan Casu	G4	xpancasu
+Dejvq	S1	Dejvq_
+Bimcss Robí	G3	bim_css
 ..........................................................................
 Team číslo 5 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
-Dawemandude	G1	Dawemandude
-Gedhry	G1	gedhry_cz
-OG Senpai	G1	OG_Senpai_Real
-ondikuvklubik	G1	NekroNEU
-mart3N	G1	Em_Vee
+fujcool05	D3	fujcool007
+The R A F	G1	RaFaaanek
+UAP Prokop	G4	UAP_Prokop
+Gedhry	S1	gedhry_cz
+Lord Kámen	G4	9kamen9
 ..........................................................................
-Team číslo 6 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
-Arxibalo	G1	inddyy
-Taaziik	G1	zz why ßlue
-Zagorka je bengr	G1	ondasak
-KrepoCZ	G1	threshplejr
-Warfy	G1	Warfy13
+Team číslo 6 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+lidlfanboy	B2	dvalidi
+ofun01	G4	ofun01
+GODSUP1	G2	frouzi23
+mikko013	G2	Mikko013
+Kromyho Fotr	MA	Chimer123
 ..........................................................................
-Team číslo 7 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
-JFK is now AFK	G1	Tomeiki
-reformed luko	G1	smutnej_gadzo
-T1 Betrayer	G1	Ezriana
-Karel55555	G1	karelkrawiecz
-ceskahymna	G1	fifo_10
+Team číslo 7 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+Dawemandude	G2	Dawemandude
+matyasss	P1	marr22421
+DocfoxxSK	E3	Sakyron
+LukonSK	S4	Luk0n
+Mum4m	G4	Mum4m
 ..........................................................................
-Team číslo 8 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
-Atom 12	G1	cokoladovytunik
-Darthsully	G1	sullylol
-9INCHBENDINLEFT	G1	smoggy16
-Raivn	G1	raivn2
-LuckyMousie	G1	LuckyMousie
+Team číslo 8 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+Oncek	G4	CauOncek
+RTMR	D3	r0th_
+Lukinno123	P4	Lukin_no
+ArchangeIMichaeI	G4	darkwolfCZe
+LukyNeníNoob	S4	Plesnivaak
 ..........................................................................
-Počet teamů: 8
-Počet hráčů: 40
-Průměrný mmr teamů: 16
-Průměrný rank teamů: Gold 1
+Team číslo 9 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+Fooxγ	D2	FooXy21
+Alfa opice	P4	R0xrit3
+MarečekPáreček	B3	MarkmanCZE
+Dankos The Carry	P4	DankosTheCarry
+KUBULIN22	G4	Kubulin221
+..........................................................................
+Team číslo 10 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+Hi Im Alfaběloch	P2	alfabeloch
+Vincentka	P2	herald_of_trivia
+Tankuji Plzeň	P3	cervenobaf
+RoyalAra	G2	aranoiremei
+SnAp3rCZ	S4	SnAp3rCZ
+..........................................................................
+Team číslo 11 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+o11sako	S3	o11sako
+Charmie	P4	Charmiie
+WAM3	P4	wamee_
+Rebbels	P4	Rebbels_17
+Samurai in jeans	P4	atjov__
+..........................................................................
+Team číslo 12 ... Team MMR : 16 - Rank : Gold 1 Počet hráčů : 5
+Vilnaria	S3	Vilnaria
+PL0KIJ	G3	PL0KIJ
+lambovsky1	G4	lambovsky
+Barrel Slayer	P4	Bisifen
+Hello im Jano	D3	Semanji
+..........................................................................
+Team číslo 13 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+Lidl Uzi	S4	NeavCZ
+wojdik32	G4	wojdik32_cz
+Pischinger	P1	pischingr
+Bedion	S3	bediortv
+farm till I die	D2	zezak15
+..........................................................................
+Team číslo 14 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+FlipMax	S4	Hugy_Tiger
+Kaxtax	G4	mosssty
+vychcany h0vno	P3	Etiras
+TMR SGooB	MA	sgooob
+Křivábravka	S4	JenProsteLukas
+..........................................................................
+Team číslo 15 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+lordthefrye	MA	lordthefray
+Where problem	S3	where_problem
+42OENJOOYER	S1	damsikotel
+def of insanity	S3	Lemao94
+M1saaK	P4	MisaaK_
+..........................................................................
+Team číslo 16 ... Team MMR : 15 - Rank : Gold 2 Počet hráčů : 5
+Makishimue	D2	makishimue
+Mettalladdis	B3	metalladis
+E5 ER1K	GM	ER1K_west
+NovoCZE	S3	novocz
+frafticekcz	B4	fraftikcz
+..........................................................................
+Počet teamů: 16
+Počet hráčů: 80
+Průměrný mmr teamů: 15
+Průměrný rank teamů: Gold 2
 ...............................Počet ranků................................
 Challenger: 0
-Grandmaster: 0
-Master: 0
-Diamond: 0
-Platinum: 0
-Gold: 40
-Silver: 0
-Bronze: 0
-Iron: 0
+Grandmaster: 1
+Master: 3
+Diamond: 8
+Emerald: 1
+Platinum: 18
+Gold: 29
+Silver: 15
+Bronze: 4
+Iron: 1
 ...........................................................................
