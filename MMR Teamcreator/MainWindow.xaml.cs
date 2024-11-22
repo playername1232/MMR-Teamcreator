@@ -85,68 +85,6 @@ namespace MMR_Teamcreator
             });
         }
 
-        /// <summary>
-        /// This Method is deprecated
-        /// </summary>
-        [Obsolete("This method is not being used due to different approach", true)]
-        private void PlayerSelection()
-        {
-            return;
-            string[] _roles = { "top", "jg", "mid", "adc", "supp" };
-            Label _ingameNick = new Label();
-            _ingameNick.Content = "Ingame nick";
-            _ingameNick.Width = 95; _ingameNick.Height = 30;
-            _ingameNick.Margin = new Thickness(-this.Width / 2, -this.Height + 45 * 2, 0, 0);
-            MainGrid_Grid.Children.Add(_ingameNick);
-            Label _rankLabel = new Label();
-            _rankLabel.Content = "Rank";
-            _rankLabel.Width = 45; _rankLabel.Height = 30;
-            _rankLabel.Margin = new Thickness((_ingameNick.Margin.Left + _ingameNick.Width) + _ingameNick.Width * 1.6f, -this.Height + 45 * 2, 0, 0);
-            MainGrid_Grid.Children.Add(_rankLabel);
-            Label _twitchNick = new Label();
-            _twitchNick.Content = "Twitch nick";
-            _twitchNick.Width = 95; _twitchNick.Height = 30;
-            _twitchNick.Margin = new Thickness((_rankLabel.Margin.Left + _twitchNick.Width) + _rankLabel.Width * 3, -this.Height + 45 * 2, 0, 0);
-            MainGrid_Grid.Children.Add(_twitchNick);
-            //Width : 200 - Twitch && Ingame 30 - Rank; Height :  20 each
-            _currentIndex = 4;
-            while (_currentIndex >= 0)
-            {
-                for (int i = 1; i <= 16; i++)
-                {
-                    TextBox Ingame = new TextBox();
-                    Ingame.Name = $"Ingame_{_roles[_currentIndex]}_{i}";
-                    Ingame.Width = 200; Ingame.Height = 20;
-                    Ingame.Margin = new Thickness(-this.Width / 2, (-this.Height / 1.4f) + (45 * (i - 1)), 0, 0);
-                    Ingame.MouseDoubleClick += OutputTextBoxName;
-                    MainGrid_Grid.Children.Add(Ingame);
-                    TextBox Rank = new TextBox();
-                    Rank.Name = $"Rank_{_roles[_currentIndex]}_{i}";
-                    Rank.Width = 30; Rank.Height = 20;
-                    Rank.MaxLength = 2;
-                    Rank.Margin = new Thickness((Ingame.Margin.Left + Ingame.Width) + 40, (-this.Height / 1.4f) + (45 * (i - 1)), 0, 0);
-                    Rank.MouseDoubleClick += OutputTextBoxName;
-                    MainGrid_Grid.Children.Add(Rank);
-                    TextBox Twitch = new TextBox();
-                    Twitch.Name = $"Twitch_{_roles[_currentIndex]}_{i}";
-                    Twitch.Width = 200; Twitch.Height = 20;
-                    Twitch.Margin = new Thickness((Rank.Margin.Left + Rank.Width) + 210, (-this.Height / 1.4f) + (45 * (i - 1)), 0, 0);
-                    Twitch.MouseDoubleClick += OutputTextBoxName;
-                    MainGrid_Grid.Children.Add(Twitch);
-                }
-                _currentIndex--;
-            }
-            Button _confirm = new Button();
-            _confirm.Name = "Confirm_Button";
-            _confirm.Content = "OK";
-            _confirm.Width = 60; _confirm.Height = 30;
-            _confirm.Margin = new Thickness(this.Width / 2, this.Height - 100, 0, 0);
-            /*_confirm.Click += OkButtonClick;*/
-            MainGrid_Grid.Children.Add(_confirm);
-            _currentIndex = 0;
-            this.Title = "Toplane";
-        }
-
 
         private void OutputTextBoxName(object sender, EventArgs e)
         {
@@ -171,8 +109,7 @@ namespace MMR_Teamcreator
             StreamerResult.Midlaners.Clear();
             StreamerResult.ADCarries.Clear();
             StreamerResult.Supports.Clear();
-
-
+            
 
             if (currentMode == ProgramModes.TeamBalancing)
             {
