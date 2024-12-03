@@ -12,9 +12,9 @@ namespace MMR_Teamcreator.Model
 {
     public class TeamMethods
     {
-        public static List<Team> BalanceTeams(ref List<Player> topList, ref List<Player> jungleList, 
-                                              ref List<Player> midList, ref List<Player> adcList, 
-                                              ref List<Player> supportList,
+        public static List<Team> BalanceTeams(List<Player> topList, List<Player> jungleList, 
+                                              List<Player> midList, List<Player> adcList, 
+                                              List<Player> supportList,
             bool createRandomPlayers = false, bool save = false)
         {
             TeamMethods xd = new TeamMethods();
@@ -85,7 +85,7 @@ namespace MMR_Teamcreator.Model
 
         void SortTeamsByMMR(ref List<Team> teams) => teams = teams.OrderBy(x => x.GetMMR()).ToList();
 
-        private static Dictionary<string, int> RanksCount(ref List<Team> teams)
+        private static Dictionary<string, int> RanksCount(List<Team> teams)
         {
             Dictionary<string, int> ranks = new Dictionary<string, int>
             {
@@ -279,7 +279,7 @@ namespace MMR_Teamcreator.Model
                     $"\nPrůměrný mmr teamů: {Math.Floor((decimal)avgTeamMmr / 16)}" +
                     $"\nPrůměrný rank teamů: {avgTeamRank.Replace('_', ' ')}");
 
-                Dictionary<string, int> ranksCount = RanksCount(ref teams);
+                Dictionary<string, int> ranksCount = RanksCount(teams);
 
                 sw.WriteLine("\n...............................Počet ranků................................");
 

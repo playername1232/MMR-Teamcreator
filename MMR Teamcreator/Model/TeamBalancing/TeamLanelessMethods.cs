@@ -19,19 +19,19 @@ namespace MMR_Teamcreator.Model
 {
     public class TeamLanelessMethods
     {
-        public static List<TeamLaneless> BalanceTeams(ref List<PlayerLaneless> players, bool createRandomPlayers)
+        public static List<TeamLaneless> BalanceTeams(List<PlayerLaneless> players, bool createRandomPlayers)
         {
             TeamLanelessMethods methods = new TeamLanelessMethods();
             if (createRandomPlayers)
                 methods.CreatePlayers(ref players);
 
-            return methods.InnerTeamBalance(ref players);
+            return methods.InnerTeamBalance(players);
         }
 
         public TeamLanelessMethods()
         {/* YEET */}
 
-        private List<TeamLaneless> InnerTeamBalance(ref List<PlayerLaneless> players)
+        private List<TeamLaneless> InnerTeamBalance(List<PlayerLaneless> players)
         {
             List<TeamLaneless> teams = new List<TeamLaneless>();
 
@@ -52,9 +52,9 @@ namespace MMR_Teamcreator.Model
 
             int process = 0;
 
-            while(BiggestTeamMMRGap(ref teams) > 2 && process != 250)
+            while(BiggestTeamMMRGap(teams) > 2 && process != 250)
             {
-                Tuple<int, int> indexes = IndexesOfTwoMostGappedTeams(ref teams);
+                Tuple<int, int> indexes = IndexesOfTwoMostGappedTeams(teams);
                 TeamLaneless team1 = teams[indexes.Item1];
                 TeamLaneless team2 = teams[indexes.Item2];
                 SwapDiameterClosestPlayers(ref team1, ref team2, avgMmr);
@@ -63,16 +63,16 @@ namespace MMR_Teamcreator.Model
                 process += 1;
             }
 
-            Save(ref teams);
+            Save(teams);
 
             return teams;
         }
 
         void SortTeamsByMMR(ref List<TeamLaneless> teams) => teams = teams.OrderBy(x => x.GetTeamMMR()).ToList();
 
-        int BiggestTeamMMRGap(ref List<TeamLaneless> teams) => teams.Max(x => x.GetTeamMMR()) - teams.Min(x => x.GetTeamMMR());
+        int BiggestTeamMMRGap(List<TeamLaneless> teams) => teams.Max(x => x.GetTeamMMR()) - teams.Min(x => x.GetTeamMMR());
 
-        Tuple<int, int> IndexesOfTwoMostGappedTeams(ref List<TeamLaneless> teams)
+        Tuple<int, int> IndexesOfTwoMostGappedTeams(List<TeamLaneless> teams)
         {
             int first = 0, second = 0;
 
@@ -119,7 +119,7 @@ namespace MMR_Teamcreator.Model
             TeamLaneless.SwapPlayers(ref team1, ref team2, close1, close2);
         }
 
-        void Save(ref List<TeamLaneless> teams, string path = "")
+        void Save(List<TeamLaneless> teams, string path = "")
         {
             if (path == "")
                 path = $@"{Environment.CurrentDirectory}\ClassicTeams\output.txt";
