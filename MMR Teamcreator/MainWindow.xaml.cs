@@ -224,13 +224,13 @@ namespace MMR_Teamcreator
 
                     if (i < 16)
                         topList.Add(new Player("Top", player[2], player[1], player[0]));
-                    else if (i >= 16 && i < 32)
+                    else if (i < 32)
                         jungleList.Add(new Player("Jungle", player[2], player[1], player[0]));
-                    else if (i >= 32 && i < 48)
+                    else if (i < 48)
                         midList.Add(new Player("Mid", player[2], player[1], player[0]));
-                    else if (i >= 48 && i < 64)
+                    else if (i < 64)
                         adcList.Add(new Player("ADC", player[2], player[1], player[0]));
-                    else if (i >= 64)
+                    else
                         supportList.Add(new Player("Support", player[2], player[1], player[0]));
                 }
 
